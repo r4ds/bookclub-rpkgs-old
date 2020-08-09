@@ -9,25 +9,25 @@ The `/Data` folder holds data sets that are used by book club presentations for 
 
 ### Adding data
 
-Generally speaking, please add data that is open-licensed and stored in a CSV format. 
+Generally speaking, please add data that is open-licensed and stored in a CSV format.
 
 Alternatively, parquet/sqlite/RDS formats may be appropriate for larger/more-complex datasets.
 
 ### Referring to data
 
-~~Suggested~~ required packages: 
+~~Suggested~~ Required packages: 
 
 - [r-lib/here](https://github.com/r-lib/here) - use this or else Jenny Bryan will light your computer on fire. 
 
 Optional: 
 
 - [arrow package](https://github.com/apache/arrow/tree/master/r) for parquet 
-- [RSQLite](https://github.com/r-dbi/RSQLite) for sqlite. 
+- [RSQLite](https://github.com/r-dbi/RSQLite) for sqlite
 
 ```
-# Using the here function will automatically reference all file paths from the top level .rproj file, which will help knit your RMDs!
+# Using the `here()` function will automatically reference all file paths from the top level .rproj file, which will help knit your RMDs correctly the first time!
 
-df <- readr::read_csv(here::here("Data/beer_reviews.csv"))
+df_beerreviews <- readr::read_csv(here::here("Data/beer_reviews.csv.gz"))
 
 ```
 
