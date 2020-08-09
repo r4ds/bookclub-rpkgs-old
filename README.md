@@ -11,7 +11,7 @@ This repo contains 3 main folders:
 - QandA: A collection of questions (and answers) on the chapters that come up during meetings (or between!)
 
 
-Other useful guides: [Repo Maintainers Guide](repo-maintainers.md)
+Other useful guides: [Repo Maintainers Guide](.guides/repo-maintainers.md)
 
 ### Meeting Schedule 
 
