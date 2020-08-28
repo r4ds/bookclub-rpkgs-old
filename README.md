@@ -1,8 +1,8 @@
-# R4DS [ModernDive](https://moderndive.com) Book Club
+# R4DS [{BOOK_NICKNAME}]({BOOK_URL}) Book Club
 
-A weekly reading group following the chapters of *Statistical Inference via Data Science: A ModernDive into R and the Tidyverse* by Chester Ismay and Albert Y. Kim
+A weekly reading group following the chapters of {BOOK_FULL_NAME} by {BOOK_AUTHORS}
 
-Visit the [#book_club-modern_dive channel](https://r4ds.io/join) on Slack to join the video chat! 
+Visit the [{BOOK_SLACK_CHANNEL} channel](https://r4ds.io/join) on Slack to join the video chat! 
 
 This repo contains 3 main folders:
 
@@ -14,14 +14,17 @@ Other useful guides: [Repo Maintainers Guide](.guides/repo-maintainers.md)
 
 ### Meeting Schedule 
 
-*Cohort 1 - (started 2020-08-12) - Wednesdays, 8:30pm E(D)T*
+*Cohort 1 - {DAY, TIME} - facilitated by {FACILITATOR_NAME}
 
-2020-08-12: Introduction/Goals - Matt Dupree
-2020-08-19: Chapter 2: Data Visualisation
-2020-08-26: Chapter 3: Data Wrangling
+{NEXT THREE MEETINGS}
+2020-08-12: Intro/Goals Overview
+2020-08-19: Chapter 1 (or whichever is the first logical, non-introduction chapter
+2020-08-26: Chapter 2
 
 <details>
   <summary> Future Meetings </summary>
+
+{ALL THE REST OF THE CHAPTERS OF THE BOOK}
 
 </details>
 <hr>
