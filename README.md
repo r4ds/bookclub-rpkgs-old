@@ -2,7 +2,7 @@
 
 A weekly reading group following the chapters of R Packages by Hadley Wickham and Jennifer Bryan (2nd ed, WIP)
 
-Visit the [#bookclub-rpkgs channel](https://r4ds.io/join) on Slack to join the video chat! 
+Visit the [#bookclub-r_packages channel](https://r4ds.io/join) on Slack to join the video chat! 
 
 This repo contains 2 main folders:
 
