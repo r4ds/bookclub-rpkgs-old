@@ -15,7 +15,7 @@ Other useful links:
 
 ### Meeting Schedule 
 
-*Cohort 1 - (Tuesdays 8pm ET ?) - facilitated by Jon Harmon*
+*Cohort 1 - Tuesdays 8pm ET (?) - facilitated by Jon Harmon*
 
 - 1: Chapter 1, 2: Introduction, The Whole Game; Club Goals Overview
 - 2: Chapter 3, 4, 7: System Setup, Package Structure & State, Package Metadata
