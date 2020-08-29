@@ -15,9 +15,9 @@ Other useful links:
 
 ### Meeting Schedule 
 
-*Cohort 1 - Day/Time TBD - facilitated by ?*
+*Cohort 1 - Day/Time TBD - facilitated by Jon Harmon*
 
-- 1: Intro/Goals Overview
+- 1: Chapter 1, 2: Introduction, The Whole Game; Club Goals Overview
 - 2: Chapter 3, 4, 7: System Setup, Package Structure & State, Package Metadata
 - 3: Chapter 5, 16: Fundamental Development Workflows, Git/GitHub
 - 4: Chapter 6, 8, 11: R Code, Object Documentation, Namespace
