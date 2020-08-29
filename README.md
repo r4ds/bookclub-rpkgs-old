@@ -1,6 +1,6 @@
 # R4DS [R Packages](https://r-pkgs.org/index.html) Book Club
 
-A weekly reading group following the chapters of R Packages by Hadley Wickham and Jennifer Bryan (2nd ed, WIP)
+A weekly reading group of R Packages by Hadley Wickham and Jennifer Bryan (2nd ed, WIP)
 
 Visit the [#bookclub-r_packages channel](https://r4ds.io/join) on Slack to join the video chat! 
 
