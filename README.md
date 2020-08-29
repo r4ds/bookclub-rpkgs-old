@@ -34,9 +34,3 @@ Other useful links:
 
 
 ### Presentations & Recordings
-
-Introduction/Chapter 1:
-
-Chapter 2 Data visualisation 
-
-
