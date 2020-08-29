@@ -17,13 +17,14 @@ Other useful guides: [Repo Maintainers Guide](.guides/repo-maintainers.md)
 *Cohort 1 - Day/Time TBD - facilitated by Tan
 
 Content groupings:
-1: Intro/Goals Overview
-2: Chapter 3, 4, 7: System Setup, Package Structure & State, Package Metadata
-3: Chapter 5, 16: Fundamental Development Workflows, Git/GitHub
-4: Chapter 6, 8, 11: R Code, Object Documentation, Namespace
-5: Chapter 10, 17: Testing, Automated checking
-6: Chapter 9, 12, 14: Vignettes, Installed Files, External Data
-7: Chapter 18: Releasing a package
+
+- 1: Intro/Goals Overview
+- 2: Chapter 3, 4, 7: System Setup, Package Structure & State, Package Metadata
+- 3: Chapter 5, 16: Fundamental Development Workflows, Git/GitHub
+- 4: Chapter 6, 8, 11: R Code, Object Documentation, Namespace
+- 5: Chapter 10, 17: Testing, Automated checking
+- 6: Chapter 9, 12, 14: Vignettes, Installed Files, External Data
+- 7: Chapter 18: Releasing a package
 
 <details>
   <summary> Future Meetings </summary>
