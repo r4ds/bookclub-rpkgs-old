@@ -12,7 +12,6 @@ This repo contains 2 main folders:
 Other useful links:
 
 - CRAN's [Writing R Extensions](https://cran.r-project.org/doc/manuals/r-release/R-exts.html)
-- 
 
 ### Meeting Schedule 
 
