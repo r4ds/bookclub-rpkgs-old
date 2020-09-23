@@ -18,12 +18,12 @@ Other useful links:
 *Cohort 1 - Tuesdays 8pm ET (?) - facilitated by Jon Harmon*
 
 - 1: Chapter 1, 2: Introduction, The Whole Game; Club Goals Overview
-- 2: Chapter 3, 4, 7: System Setup, Package Structure & State, Package Metadata
-- 3: Chapter 5, 16: Fundamental Development Workflows, Git/GitHub
-- 4: Chapter 6, 8, 11: R Code, Object Documentation, Namespace
-- 5: Chapter 10, 17: Testing, Automated checking
-- 6: Chapter 9, 12, 14: Vignettes, Installed Files, External Data
-- 7: Chapter 18: Releasing a package (CRAN, GH)
+- 2: Chapter 3, 4, 8, 9: System Setup, Package Structure & State, Package Metadata, Licensing
+- 3: Chapter 5, 18, 6: Fundamental Development Workflows, Git/GitHub, The package within
+- 4: Chapter 7, 10, 13: R Code, Object Documentation, Namespace
+- 5: Chapter 12, 19: Testing, Automated checking
+- 6: Chapter 11, 14, 16: Vignettes, External Data, Installed Files
+- 7: Chapter 20: Releasing a package (CRAN, GH)
 
 <details>
   <summary> Future Meetings </summary>
