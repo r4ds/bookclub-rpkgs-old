@@ -1,0 +1,15 @@
+# Welcome
+
+A companion to [R Packages](https://r-pkgs.org/)
+
+Recordings for the accompanied presentation for each chapter can be seen here](https://www.youtube.com/playlist?list=PL3x6DOfs2NGiXMln8bxY7e0XgA5z1cp-8).
+
+:::TODO
+This box means the supplied answer to the question is fuzzy and could use some work! We love PRs if you'd like to help with documentation!
+:::
+
+## After reading this chapter, you should...
+
+* Identify reasons that you might write a package.
+* Recall the philosophy that motivates devtools and similar metapackages.
+* Roughly describe the contents of each chapter of this book.
