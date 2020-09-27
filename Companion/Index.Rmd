@@ -5,9 +5,19 @@ date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book
-bibliography: [book.bib, packages.bib]
+bibliography: [book.bib]
 biblio-style: apalike
 link-citations: yes
 github-repo: r4ds/bookclub-rpkgs
 description: "This is a companion to R Packages (second edition)."
 ---
+
+# Welcome
+
+A companion to [R Packages](https://r-pkgs.org/)
+
+Recordings for the accompanied presentation for each chapter can be seen here](https://www.youtube.com/playlist?list=PL3x6DOfs2NGiXMln8bxY7e0XgA5z1cp-8).
+
+:::TODO
+This box means the supplied answer to the question is fuzzy and could use some work! We love PRs if you'd like to help with documentation!
+:::
