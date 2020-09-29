@@ -38,6 +38,16 @@ div.answer, div.question {
     border: dashed 5px #418898;
 }
 
+div.LO {
+    padding: 1em;
+    margin: 1em 0;
+    background-repeat: no-repeat;
+    background-position: 15px center;
+    color: white;
+    background-color: #28a745;
+    border: solid 5px #28a765;
+}
+
 div.TODO {
     padding: 1em;
     margin: 1em 0;
