@@ -6,8 +6,8 @@ Visit the [#bookclub-r_packages channel](https://r4ds.io/join) on Slack to join 
 
 This repo contains 2 main folders:
 
-- Presentations: each week a presenter will give a talk summarizing the chapter and/or discussing practical applications of the topic at hand. 
-- Companion: A working document outlining **learning objectives** and collecting questions (and answers) on the chapters that come up during meetings (or between!)
+- Presentations: each week a presenter will give a talk summarizing the chapter(s) and/or discussing practical applications of the topic at hand. 
+- Companion: A working document outlining **learning objectives** and **collecting questions and answers** on the chapters that come up during meetings (or between!)
 
 Other useful links:
 
@@ -32,3 +32,7 @@ Other useful links:
 - 10: Chapter 20: Releasing a package (CRAN, GH)
 
 ### Presentations & Recordings
+
+- 1: Chapter 1, 2: Introduction, The Whole Game; Club Goals Overview (2020-09-29)
+
+Cohort 1 - Jon Harmon: SLIDES | VIDEO
