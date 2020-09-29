@@ -69,13 +69,6 @@ div.question {
 
 .indent { margin-left: 1em; }
 
-#TOC {
-  background: url("www/r4ds_square.png");
-  background-size: contain;
-  padding-top: 135px !important;
-  background-repeat: no-repeat;
-}
-
 .summary {
   background-color: #eaf5f7;
 }

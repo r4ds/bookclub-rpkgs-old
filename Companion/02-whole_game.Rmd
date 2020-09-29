@@ -1,5 +1,5 @@
 # The whole game
 
-## After reading this chapter, you should...
+**Learning objectives:**
 
 * Recognize the package development process.
