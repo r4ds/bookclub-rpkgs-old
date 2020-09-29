@@ -17,6 +17,7 @@ Other useful links:
 ### Meeting Schedule/Reading Order
 
 (Order/schedule/groupings may be subject to change and will be confirmed a week in advance!)
+
 Don't forget to check out the [Learning Objectives for each week](https://r4ds.github.io/bookclub-rpkgs/Companion/docs/introduction.html)!
 
 *Cohort 1 - Tuesdays 8pm ET, starting 2020-09-29 - facilitated by Jon Harmon*
