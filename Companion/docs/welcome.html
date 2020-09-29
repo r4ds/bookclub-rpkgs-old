@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 2 The whole game | R Packages Companion</title>
+  <title>R Packages Companion</title>
   <meta name="description" content="This is a companion to R Packages (second edition)." />
   <meta name="generator" content="bookdown 0.20.2 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 2 The whole game | R Packages Companion" />
+  <meta property="og:title" content="R Packages Companion" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="r4ds/bookclub-rpkgs" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 2 The whole game | R Packages Companion" />
+  <meta name="twitter:title" content="R Packages Companion" />
   
   <meta name="twitter:description" content="This is a companion to R Packages (second edition)." />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="introduction.html"/>
-<link rel="next" href="welcome.html"/>
+
+<link rel="next" href="introduction.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -69,15 +69,15 @@
 <img src="images/r4ds.png" style="width:300px;height:180px;padding-bottom:0px;"></img>
 
 <li class="divider"></li>
+<li class="chapter" data-level="" data-path="welcome.html"><a href="welcome.html"><i class="fa fa-check"></i>Welcome</a><ul>
+<li class="chapter" data-level="" data-path="welcome.html"><a href="welcome.html#parts-of-this-companion"><i class="fa fa-check"></i>Parts of this Companion</a></li>
+<li class="chapter" data-level="" data-path="welcome.html"><a href="welcome.html#suggested-order"><i class="fa fa-check"></i>Suggested Order</a></li>
+</ul></li>
 <li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
 <li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#philosophy"><i class="fa fa-check"></i><b>1.1</b> Philosophy</a></li>
 <li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#in-this-book"><i class="fa fa-check"></i><b>1.2</b> In this book</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="the-whole-game.html"><a href="the-whole-game.html"><i class="fa fa-check"></i><b>2</b> The whole game</a></li>
-<li class="chapter" data-level="" data-path="welcome.html"><a href="welcome.html"><i class="fa fa-check"></i>Welcome</a><ul>
-<li class="chapter" data-level="2.1" data-path="welcome.html"><a href="welcome.html#parts-of-this-companion"><i class="fa fa-check"></i><b>2.1</b> Parts of this Companion</a></li>
-<li class="chapter" data-level="" data-path="welcome.html"><a href="welcome.html#suggested-order"><i class="fa fa-check"></i>Suggested Order</a></li>
-</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -98,21 +98,95 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="the-whole-game" class="section level1">
-<h1><span class="header-section-number">Chapter 2</span> The whole game</h1>
-<p><strong>Learning objectives:</strong></p>
+<div id="header">
+<h1 class="title">R Packages Companion</h1>
+<p class="author"><em>R4DS Reading Group</em></p>
+<p class="date"><em>Last rendered: 2020-09-29</em></p>
+</div>
+<div id="welcome" class="section level1 unnumbered">
+<h1>Welcome</h1>
+<p>This book is a companion to <a href="https://r-pkgs.org/">R Packages</a>, by Hadley Wickham and Jennifer Bryan, and aims to support the reader through a full read-through of the R Packages book. It aims to set out learning objectives as well as collect common questions and answers.</p>
+<p>This book is a work in progress, and being compiled alongside the first cohort(s) of the R4DS R Packages Book Club. Recordings for the accompanying presentations can be seen on <a href="https://www.youtube.com/playlist?list=PL3x6DOfs2NGiXMln8bxY7e0XgA5z1cp-8">this YouTube playlist</a>.</p>
+<div id="parts-of-this-companion" class="section level2 unnumbered">
+<h2>Parts of this Companion</h2>
+<div class="LO">
+<p>This box outlines some <strong>Learning Objectives</strong> for each chapter.</p>
+<p>For example:</p>
 <ul>
-<li>Recognize the package development process.</li>
+<li>Identify reasons that you might write a package.</li>
+<li>Become familiar with all of the parts of an R package.</li>
+</ul>
+</div>
+<div class="question">
+<p>This box denotes a question!</p>
+</div>
+<div class="TODO">
+<p>This box means the supplied answer to the question is fuzzy and could use some work! We love PRs if you’d like to help with documentation!</p>
+</div>
+</div>
+<div id="suggested-order" class="section level2 unnumbered">
+<h2>Suggested Order</h2>
+<p>We believe there is a better (idea-based) order in which this book should be read (for example, by a book club):</p>
+<p><strong>Why should I read this book?</strong></p>
+<ul>
+<li>Chapter 1: Introduction</li>
+<li>Chapter 2: The whole game</li>
+</ul>
+<p><strong>How do I set up my system and get started?</strong></p>
+<ul>
+<li>Chapter 3: System setup</li>
+<li>Chapter 4: Package structure and state</li>
+</ul>
+<p><strong>How should I work on my package?</strong></p>
+<ul>
+<li>Chapter 5: Fundamental development workflows</li>
+<li>Chapter 18: Git and GitHub</li>
+</ul>
+<p><strong>How do I convert a script to a package?</strong></p>
+<ul>
+<li>Chapter 6: The package within</li>
+<li>Chapter 11: Vignettes: long-form documentation</li>
+</ul>
+<p><strong>How do I write functions and document them?</strong></p>
+<ul>
+<li>Chapter 7: R code</li>
+<li>Chapter 10: Object documentation</li>
+<li>Chapter 13: Namespace</li>
+</ul>
+<p><strong>How do I make sure my package works?</strong></p>
+<ul>
+<li>Chapter 12: Testing</li>
+<li>Chapter 19: Automated checking</li>
+</ul>
+<p><strong>How do I describe my package?</strong></p>
+<ul>
+<li>Chapter 8: Package metadata</li>
+<li>Chapter 9: Licensing</li>
+</ul>
+<p><strong>How do I include things like data or other files?</strong></p>
+<ul>
+<li>Chapter 14: External data</li>
+<li>Chapter 16: Installed files</li>
+</ul>
+<p><strong>How do I use compiled code and other obscure package-y things?</strong></p>
+<ul>
+<li>Chapter 15: Compiled code</li>
+<li>Chapter 17: Other components</li>
+</ul>
+<p><strong>How do I release my package?</strong></p>
+<ul>
+<li>Chapter 20: Releasing a package</li>
 </ul>
 
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="introduction.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="welcome.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+
+<a href="introduction.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -143,7 +217,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/r4ds/bookclub-rpkgs/edit/main/02-whole_game.Rmd",
+"link": "https://github.com/r4ds/bookclub-rpkgs/edit/main/00-welcome.Rmd",
 "text": "Edit"
 },
 "history": {
