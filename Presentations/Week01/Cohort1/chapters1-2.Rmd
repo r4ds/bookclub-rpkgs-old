@@ -1,0 +1,81 @@
+---
+title: "R Packages"
+subtitle: "Introduction"
+author: "Jon Harmon"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css: xaringan-themer.css
+    includes:
+      after_body: insert-logo.html
+---
+
+```{r libraries, include = FALSE}
+library(xaringanthemer)
+```
+
+```{r xaringan-themer, include = FALSE}
+style_mono_light(
+  base_color = "#3092FF",
+  header_font_google = google_font("Josefin Sans"),
+  text_font_google   = google_font("Montserrat", "300", "300i"),
+  code_font_google   = google_font("Droid Mono"),
+)
+```
+
+# This week's learning objectives
+
+- Identify reasons that you might write a package.
+- Recall the philosophy that motivates devtools and similar metapackages.
+- Roughly describe the contents of each chapter of this book.
+- Recognize the package development process.
+
+---
+
+# Why write a package?
+
+> "Seriously, it doesn’t have to be about sharing your code (although that is an added benefit!). It is about saving yourself time."
+> — Hillary Parker
+
+- Share code with others (easy download, install, and use)
+- Opinionated organization; you don't have to think about it
+- Standardized tools (usethis/devtools/goodpractice)
+
+---
+
+# Metapackages
+
+> "Anything that can be automated, should be automated."
+
+- devtools: Meta-meta-package that loads all the tidyverse team metapackages.
+- usethis: Go through the function list on this to make your life easier.
+- goodpractice: Not mentioned in the book but I find it super helpful for catching all the things.
+- styler: Enforce style so you don't have to.
+
+---
+
+# Tan's Machete Order
+
+![Machete order](machete.jpg)
+--
+
+- Why should I read this book? 1 & 2
+- How do I set up my system and get started? 3 & 4
+- How should I work on my package? 5 & 18
+- How do I convert a script to a package? 6 & 11
+- How do I write functions and document them? 7, 10, & 13
+- How do I make sure my package works? 12 & 19
+- How do I describe my package? 8 & 9
+- How do I include things like data or other files? 14 & 16
+- How do I use compiled code and other obscure package-y things? 15 & 17
+- How do I release my package? 20
+
+
+--
+**This may all go away as we work 'cuz the book may change!**
+
+---
+
+# Let's make a package!
+
+{live coding following along with Chapter 2}

@@ -37,4 +37,4 @@ Don't forget to check out the [Learning Objectives for each week](https://r4ds.g
 
 - 1: Chapter 1, 2: Introduction, The Whole Game; Club Goals Overview
 
-Cohort 1 - Jon Harmon: SLIDES | VIDEO
+Cohort 1 - [Jon Harmon](https://twitter.com/jonthegeek): [slides](https://r4ds.github.io/bookclub-rpkgs/Presentations/Week01/Cohort1/chapters1-2.html#1) | [video](https://youtu.be/FR6NsbkYhcw)
