@@ -27,4 +27,4 @@ This box means the supplied answer to the question is fuzzy and could use some w
 
 ## Suggested Order {-}
 
-We believe there is a different (idea-based) order in which this book should be read if reading every chapter (for example, by a book club) and our first cohort of the book club will be [following the order described here](docs/introduction.html)!
+We believe there is a different (idea-based) order in which this book should be read if reading every chapter (for example, by a book club) and our first cohort of the book club will be [following the order described here](introduction.html)!
