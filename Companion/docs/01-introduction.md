@@ -16,7 +16,7 @@
 * Roughly describe the contents of each chapter of this book.
 :::
 
-Further to this objective, our book club cohort plans to tackle the chapters of the book in a bit of a machete order that tries to group similar ideas together:
+Further to this objective, our book club cohort plans to tackle the chapters of the book in a bit of a [Machete Order](https://www.nomachetejuggling.com/2011/11/11/the-star-wars-saga-suggested-viewing-order/) that tries to group similar ideas together:
 
 **Why should I read this book?**
 
