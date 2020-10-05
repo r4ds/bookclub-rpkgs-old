@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
 
-p.caption {
+.caption {
   color: #777;
   margin-top: 10px;
 }
@@ -26,19 +26,29 @@ h1 {
   color: #418898;
 }
 
-div.answer, div.question {
+.question {
     padding: 1em;
     margin: 1em 0;
     padding-left: 100px;
     background-size: 40px;
     background-repeat: no-repeat;
     background-position: 15px center;
-    color: #1f5386;
+    color: white;
     background-color: #53B1C2;
     border: dashed 5px #418898;
 }
 
-div.TODO {
+.LO {
+    padding: 1em;
+    margin: 1em 0;
+    background-repeat: no-repeat;
+    background-position: 15px center;
+    color: white;
+    background-color: #28a745;
+    border: solid 5px #7eca8f;
+}
+
+.TODO {
     padding: 1em;
     margin: 1em 0;
     background-repeat: no-repeat;
@@ -48,13 +58,8 @@ div.TODO {
     border: solid 5px #8e1600;
 }
 
-div.question {
+.question {
   background-image: url("images/question.png");
-}
-
-.Q {
-  color: red;
-  font-weight: bold;
 }
 
 .solved {
