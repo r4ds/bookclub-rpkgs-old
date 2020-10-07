@@ -39,4 +39,4 @@ Don't forget to check out the [Learning Objectives for each week](https://r4ds.g
 
 2: Chapter 3, 4: System Setup, Package Structure & State
 
-- Cohort 1 - Asmae Toumi: slides | video
+- Cohort 1 - [Asmae Toumi](https://twitter.com/asmae_toumi): slides | [video](https://youtu.be/3r-EPc9XqxE)
