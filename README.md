@@ -22,8 +22,8 @@ Don't forget to check out the [Learning Objectives for each week](https://r4ds.g
 
 *Cohort 1 - Tuesdays 8pm ET, starting 2020-09-29 - facilitated by Jon Harmon*
 
-- 3: Chapter 6, 11: The package within, Vignettes - [Tan Ho](https://twitter.com/_tanho) (2020-10-13)
-- 4: Chapter 5, 18: Fundamental Development Workflows, Git/GitHub
+- 3: Chapter 5, 18: Fundamental Development Workflows, Git/GitHub - [Tan Ho](https://twitter.com/_tanho) (2020-10-13)
+- 4: Chapter 6, 11: The package within, Vignettes 
 - 5: Chapter 7, 10, 13: R Code, Object Documentation, Namespace
 - 6: Chapter 12, 19: Testing, Automated checking
 - 7: Chapter 8, 9 Package Metadata, Licensing
