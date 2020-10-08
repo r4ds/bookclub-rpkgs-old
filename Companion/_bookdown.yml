@@ -4,3 +4,11 @@ repo: https://github.com/r4ds/bookclub-rpkgs
 output_dir: docs
 clean: [packages.bib, bookdown.bbl]
 new_session: yes
+rmd_files: [
+  "Index.Rmd",
+  "00-welcome.Rmd",
+  "01-introduction.Rmd",
+  "02-whole_game.Rmd",
+  "03-system_setup.Rmd",
+  "04-package_structure_and_state.Rmd"
+]

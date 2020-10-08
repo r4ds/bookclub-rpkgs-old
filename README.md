@@ -22,11 +22,9 @@ Don't forget to check out the [Learning Objectives for each week](https://r4ds.g
 
 *Cohort 1 - Tuesdays 8pm ET, starting 2020-09-29 - facilitated by Jon Harmon*
 
-- 1: Chapter 1, 2: Introduction, The Whole Game; Club Goals Overview (2020-09-29)
-- 2: Chapter 3, 4: System Setup, Package Structure & State
-- 3: Chapter 6, 11: The package within, Vignettes
-- 4: Chapter 5, 18: Fundamental Development Workflows, Git/GitHub
-- 5: Chapter 7, 10, 13: R Code, Object Documentation, Namespace
+- 3: Chapter 5, 18: Fundamental Development Workflows, Git/GitHub - [Tan Ho](https://twitter.com/_tanho) (2020-10-13)
+- 4: Chapter 6, 11: The package within, Vignettes - [Jon Harmon](https://twitter.com/JonTheGeek) (2020-10-20)
+- 5: Chapter 7, 10, 13: R Code, Object Documentation, Namespace - Jon Leslie (2020-10-27)
 - 6: Chapter 12, 19: Testing, Automated checking
 - 7: Chapter 8, 9 Package Metadata, Licensing
 - 8: Chapter 14, 16: External Data, Installed Files
@@ -35,6 +33,10 @@ Don't forget to check out the [Learning Objectives for each week](https://r4ds.g
 
 ### Presentations & Recordings
 
-- 1: Chapter 1, 2: Introduction, The Whole Game; Club Goals Overview
+1: Chapter 1, 2: Introduction, The Whole Game; Club Goals Overview
 
-Cohort 1 - Jon Harmon: SLIDES | VIDEO
+- Cohort 1 - [Jon Harmon](https://twitter.com/jonthegeek): [slides](https://r4ds.github.io/bookclub-rpkgs/Presentations/Week01/Cohort1/chapters1-2.html#1) | [video](https://youtu.be/FR6NsbkYhcw)
+
+2: Chapter 3, 4: System Setup, Package Structure & State
+
+- Cohort 1 - [Asmae Toumi](https://twitter.com/asmae_toumi): SLIDES | [video](https://youtu.be/3r-EPc9XqxE)
