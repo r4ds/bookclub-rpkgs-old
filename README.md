@@ -24,7 +24,7 @@ Don't forget to check out the [Learning Objectives for each week](https://r4ds.g
 
 - 3: Chapter 5, 18: Fundamental Development Workflows, Git/GitHub - [Tan Ho](https://twitter.com/_tanho) (2020-10-13)
 - 4: Chapter 6, 11: The package within, Vignettes - [Jon Harmon](https://twitter.com/JonTheGeek) (2020-10-20)
-- 5: Chapter 7, 10, 13: R Code, Object Documentation, Namespace - Jon Leslie (2020-10-27)
+- 5: Chapter 7, 10, 13: R Code, Object Documentation, Namespace - [Jon Leslie](https://twitter.com/jlesliedata) (2020-10-27)
 - 6: Chapter 12, 19: Testing, Automated checking
 - 7: Chapter 8, 9 Package Metadata, Licensing
 - 8: Chapter 14, 16: External Data, Installed Files
