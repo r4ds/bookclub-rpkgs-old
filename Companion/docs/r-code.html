@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 11 Vignettes (WIP) | R Packages Companion</title>
+  <title>Chapter 7 R code | R Packages Companion</title>
   <meta name="description" content="This is a companion to R Packages (second edition)." />
   <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 11 Vignettes (WIP) | R Packages Companion" />
+  <meta property="og:title" content="Chapter 7 R code | R Packages Companion" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="r4ds/bookclub-rpkgs" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 11 Vignettes (WIP) | R Packages Companion" />
+  <meta name="twitter:title" content="Chapter 7 R code | R Packages Companion" />
   
   <meta name="twitter:description" content="This is a companion to R Packages (second edition)." />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="object-documentation-wip.html"/>
-<link rel="next" href="testing-wip.html"/>
+<link rel="prev" href="the-package-within.html"/>
+<link rel="next" href="package-metadata-wip.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -81,14 +81,14 @@
 <li class="chapter" data-level="3" data-path="system-setup.html"><a href="system-setup.html"><i class="fa fa-check"></i><b>3</b> System setup</a></li>
 <li class="chapter" data-level="4" data-path="package-structure-and-state.html"><a href="package-structure-and-state.html"><i class="fa fa-check"></i><b>4</b> Package structure and state</a></li>
 <li class="chapter" data-level="5" data-path="fundamental-development-workflows.html"><a href="fundamental-development-workflows.html"><i class="fa fa-check"></i><b>5</b> Fundamental development workflows</a></li>
-<li class="chapter" data-level="6" data-path="the-package-within-wip.html"><a href="the-package-within-wip.html"><i class="fa fa-check"></i><b>6</b> The package within (WIP)</a></li>
-<li class="chapter" data-level="7" data-path="r-code-wip.html"><a href="r-code-wip.html"><i class="fa fa-check"></i><b>7</b> R code (WIP)</a></li>
+<li class="chapter" data-level="6" data-path="the-package-within.html"><a href="the-package-within.html"><i class="fa fa-check"></i><b>6</b> The package within</a></li>
+<li class="chapter" data-level="7" data-path="r-code.html"><a href="r-code.html"><i class="fa fa-check"></i><b>7</b> R code</a></li>
 <li class="chapter" data-level="8" data-path="package-metadata-wip.html"><a href="package-metadata-wip.html"><i class="fa fa-check"></i><b>8</b> Package metadata (WIP)</a></li>
 <li class="chapter" data-level="9" data-path="licensing-wip.html"><a href="licensing-wip.html"><i class="fa fa-check"></i><b>9</b> Licensing (WIP)</a></li>
-<li class="chapter" data-level="10" data-path="object-documentation-wip.html"><a href="object-documentation-wip.html"><i class="fa fa-check"></i><b>10</b> Object documentation (WIP)</a></li>
-<li class="chapter" data-level="11" data-path="vignettes-wip.html"><a href="vignettes-wip.html"><i class="fa fa-check"></i><b>11</b> Vignettes (WIP)</a></li>
+<li class="chapter" data-level="10" data-path="object-documentation.html"><a href="object-documentation.html"><i class="fa fa-check"></i><b>10</b> Object documentation</a></li>
+<li class="chapter" data-level="11" data-path="vignettes.html"><a href="vignettes.html"><i class="fa fa-check"></i><b>11</b> Vignettes</a></li>
 <li class="chapter" data-level="12" data-path="testing-wip.html"><a href="testing-wip.html"><i class="fa fa-check"></i><b>12</b> Testing (WIP)</a></li>
-<li class="chapter" data-level="13" data-path="namespace-wip.html"><a href="namespace-wip.html"><i class="fa fa-check"></i><b>13</b> Namespace (WIP)</a></li>
+<li class="chapter" data-level="13" data-path="namespace.html"><a href="namespace.html"><i class="fa fa-check"></i><b>13</b> Namespace</a></li>
 <li class="chapter" data-level="14" data-path="external-data-wip.html"><a href="external-data-wip.html"><i class="fa fa-check"></i><b>14</b> External data (WIP)</a></li>
 <li class="chapter" data-level="15" data-path="compiled-code-wip.html"><a href="compiled-code-wip.html"><i class="fa fa-check"></i><b>15</b> Compiled code (WIP)</a></li>
 <li class="chapter" data-level="16" data-path="installed-files-wip.html"><a href="installed-files-wip.html"><i class="fa fa-check"></i><b>16</b> Installed files (WIP)</a></li>
@@ -116,12 +116,23 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="vignettes-wip" class="section level1">
-<h1><span class="header-section-number">Chapter 11</span> Vignettes (WIP)</h1>
+<div id="r-code" class="section level1">
+<h1><span class="header-section-number">Chapter 7</span> R code</h1>
 <div class="LO">
 <p><strong>Learning objectives:</strong></p>
 <ul>
-<li>TBD</li>
+<li>List organizing principles for <code>.R</code> files in a package’s <code>R</code> directory.</li>
+<li>Use <code>devtools::load_all()</code> to check your code.</li>
+<li>Use the <code>styler</code> package to enforce a code style.</li>
+<li>Appreciate how build-time execution can cause issues in packages.</li>
+<li>Understand the dangers of changing the R landscape.</li>
+<li>Manage state with <code>withr</code>.</li>
+<li>Restore state with <code>base::on.exit()</code>.</li>
+<li>Isolate side effects in separate functions.</li>
+<li>Use <code>.onLoad()</code>, <code>.onAttach()</code>, and <code>.onUnload()</code> to modify the R landscape.</li>
+<li>Use <code>devtools::document()</code>, <code>devtools::test()</code>, and <code>devtools::check()</code> for fast feedback.</li>
+<li>Use <code>stringi::stri_escape_unicode()</code> to escape special characters.</li>
+<li>Use <code>tools::showNonASCII()</code> and <code>tools::showNonASCIIfile()</code> to locate special characters.</li>
 </ul>
 </div>
 
@@ -131,8 +142,8 @@
           </div>
         </div>
       </div>
-<a href="object-documentation-wip.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="testing-wip.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="the-package-within.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="package-metadata-wip.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -163,7 +174,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/r4ds/bookclub-rpkgs/edit/main/11-vignettes_long_form_documentation.Rmd",
+"link": "https://github.com/r4ds/bookclub-rpkgs/edit/main/07-r_code.Rmd",
 "text": "Edit"
 },
 "history": {

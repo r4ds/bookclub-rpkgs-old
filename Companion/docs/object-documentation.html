@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 10 Object documentation (WIP) | R Packages Companion</title>
+  <title>Chapter 10 Object documentation | R Packages Companion</title>
   <meta name="description" content="This is a companion to R Packages (second edition)." />
   <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 10 Object documentation (WIP) | R Packages Companion" />
+  <meta property="og:title" content="Chapter 10 Object documentation | R Packages Companion" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="r4ds/bookclub-rpkgs" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 10 Object documentation (WIP) | R Packages Companion" />
+  <meta name="twitter:title" content="Chapter 10 Object documentation | R Packages Companion" />
   
   <meta name="twitter:description" content="This is a companion to R Packages (second edition)." />
   
@@ -31,7 +31,7 @@
   
   
 <link rel="prev" href="licensing-wip.html"/>
-<link rel="next" href="vignettes-wip.html"/>
+<link rel="next" href="vignettes.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -81,14 +81,14 @@
 <li class="chapter" data-level="3" data-path="system-setup.html"><a href="system-setup.html"><i class="fa fa-check"></i><b>3</b> System setup</a></li>
 <li class="chapter" data-level="4" data-path="package-structure-and-state.html"><a href="package-structure-and-state.html"><i class="fa fa-check"></i><b>4</b> Package structure and state</a></li>
 <li class="chapter" data-level="5" data-path="fundamental-development-workflows.html"><a href="fundamental-development-workflows.html"><i class="fa fa-check"></i><b>5</b> Fundamental development workflows</a></li>
-<li class="chapter" data-level="6" data-path="the-package-within-wip.html"><a href="the-package-within-wip.html"><i class="fa fa-check"></i><b>6</b> The package within (WIP)</a></li>
-<li class="chapter" data-level="7" data-path="r-code-wip.html"><a href="r-code-wip.html"><i class="fa fa-check"></i><b>7</b> R code (WIP)</a></li>
+<li class="chapter" data-level="6" data-path="the-package-within.html"><a href="the-package-within.html"><i class="fa fa-check"></i><b>6</b> The package within</a></li>
+<li class="chapter" data-level="7" data-path="r-code.html"><a href="r-code.html"><i class="fa fa-check"></i><b>7</b> R code</a></li>
 <li class="chapter" data-level="8" data-path="package-metadata-wip.html"><a href="package-metadata-wip.html"><i class="fa fa-check"></i><b>8</b> Package metadata (WIP)</a></li>
 <li class="chapter" data-level="9" data-path="licensing-wip.html"><a href="licensing-wip.html"><i class="fa fa-check"></i><b>9</b> Licensing (WIP)</a></li>
-<li class="chapter" data-level="10" data-path="object-documentation-wip.html"><a href="object-documentation-wip.html"><i class="fa fa-check"></i><b>10</b> Object documentation (WIP)</a></li>
-<li class="chapter" data-level="11" data-path="vignettes-wip.html"><a href="vignettes-wip.html"><i class="fa fa-check"></i><b>11</b> Vignettes (WIP)</a></li>
+<li class="chapter" data-level="10" data-path="object-documentation.html"><a href="object-documentation.html"><i class="fa fa-check"></i><b>10</b> Object documentation</a></li>
+<li class="chapter" data-level="11" data-path="vignettes.html"><a href="vignettes.html"><i class="fa fa-check"></i><b>11</b> Vignettes</a></li>
 <li class="chapter" data-level="12" data-path="testing-wip.html"><a href="testing-wip.html"><i class="fa fa-check"></i><b>12</b> Testing (WIP)</a></li>
-<li class="chapter" data-level="13" data-path="namespace-wip.html"><a href="namespace-wip.html"><i class="fa fa-check"></i><b>13</b> Namespace (WIP)</a></li>
+<li class="chapter" data-level="13" data-path="namespace.html"><a href="namespace.html"><i class="fa fa-check"></i><b>13</b> Namespace</a></li>
 <li class="chapter" data-level="14" data-path="external-data-wip.html"><a href="external-data-wip.html"><i class="fa fa-check"></i><b>14</b> External data (WIP)</a></li>
 <li class="chapter" data-level="15" data-path="compiled-code-wip.html"><a href="compiled-code-wip.html"><i class="fa fa-check"></i><b>15</b> Compiled code (WIP)</a></li>
 <li class="chapter" data-level="16" data-path="installed-files-wip.html"><a href="installed-files-wip.html"><i class="fa fa-check"></i><b>16</b> Installed files (WIP)</a></li>
@@ -116,12 +116,22 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="object-documentation-wip" class="section level1">
-<h1><span class="header-section-number">Chapter 10</span> Object documentation (WIP)</h1>
+<div id="object-documentation" class="section level1">
+<h1><span class="header-section-number">Chapter 10</span> Object documentation</h1>
 <div class="LO">
 <p><strong>Learning objectives:</strong></p>
 <ul>
-<li>TBD</li>
+<li>Recognize the roxygen2 documentation workflow.</li>
+<li>Use Build &amp; Reload to update more complex documentation.</li>
+<li>Understand the basic roxygen comment skeleton: title, description, and details.</li>
+<li>Document a function using roxygen comments.</li>
+<li>Document a package using roxygen comments.</li>
+<li>Recognize techniques for documenting classes, generics, and methods.</li>
+<li>Remember the three special characters in roxygen comments: <code>@</code>, <code>%</code>, and <code>\</code>.</li>
+<li>Use <code>@inheritParams</code> to share parameter descriptions between functions.</li>
+<li>Use <code>@describeIn</code> to merge documentation.</li>
+<li>Use <code>@rdname</code> to merge documentation.</li>
+<li>Use the reference sheet to apply advanced formatting to documentation.</li>
 </ul>
 </div>
 
@@ -132,7 +142,7 @@
         </div>
       </div>
 <a href="licensing-wip.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="vignettes-wip.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="vignettes.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
