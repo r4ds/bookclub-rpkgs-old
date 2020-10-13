@@ -10,5 +10,21 @@ rmd_files: [
   "01-introduction.Rmd",
   "02-whole_game.Rmd",
   "03-system_setup.Rmd",
-  "04-package_structure_and_state.Rmd"
+  "04-package_structure_and_state.Rmd",
+  "05-fundamental_development_workflows.Rmd",
+  "06-the_package_within.Rmd",
+  "07-r_code.Rmd",
+  "08-package_metadata.Rmd",
+  "09-licensing.Rmd",
+  "10-object_documentation.Rmd",
+  "11-vignettes_long_form_documentation.Rmd",
+  "12-testing.Rmd",
+  "13-namespace.Rmd",
+  "14-external_data.Rmd",
+  "15-compiled_code.Rmd",
+  "16-installed_files.Rmd",
+  "17-other_components.Rmd",
+  "18-git_and_github.Rmd",
+  "19-automated_checking.Rmd",
+  "20-releasing_a_package.Rmd"
 ]
