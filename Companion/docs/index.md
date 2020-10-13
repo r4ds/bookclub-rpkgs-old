@@ -1,7 +1,7 @@
 --- 
 title: "R Packages Companion"
 author: "R4DS Reading Group"
-date: "Last rendered: 2020-10-05"
+date: "Last rendered: 2020-10-13"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book
