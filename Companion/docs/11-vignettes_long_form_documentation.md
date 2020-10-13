@@ -1,7 +1,12 @@
-# Vignettes (WIP)
+# Vignettes
 
 :::LO
 **Learning objectives:**
 
-* TBD
+* Define a vignette as a long-form guide to your package.
+* Create a vignette with `usethis::use_vignette()`.
+* Recognize the metadata fields in a vignette.
+* Remember that markdown allows you to format your vignette.
+* Understand how to intermingle R code and text in vignettes.
+* Remember how to view your vignette as it will appear to a user.
 :::

@@ -31,7 +31,7 @@
   
   
 <link rel="prev" href="package-structure-and-state.html"/>
-<link rel="next" href="the-package-within-wip.html"/>
+<link rel="next" href="the-package-within.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -81,14 +81,14 @@
 <li class="chapter" data-level="3" data-path="system-setup.html"><a href="system-setup.html"><i class="fa fa-check"></i><b>3</b> System setup</a></li>
 <li class="chapter" data-level="4" data-path="package-structure-and-state.html"><a href="package-structure-and-state.html"><i class="fa fa-check"></i><b>4</b> Package structure and state</a></li>
 <li class="chapter" data-level="5" data-path="fundamental-development-workflows.html"><a href="fundamental-development-workflows.html"><i class="fa fa-check"></i><b>5</b> Fundamental development workflows</a></li>
-<li class="chapter" data-level="6" data-path="the-package-within-wip.html"><a href="the-package-within-wip.html"><i class="fa fa-check"></i><b>6</b> The package within (WIP)</a></li>
-<li class="chapter" data-level="7" data-path="r-code-wip.html"><a href="r-code-wip.html"><i class="fa fa-check"></i><b>7</b> R code (WIP)</a></li>
+<li class="chapter" data-level="6" data-path="the-package-within.html"><a href="the-package-within.html"><i class="fa fa-check"></i><b>6</b> The package within</a></li>
+<li class="chapter" data-level="7" data-path="r-code.html"><a href="r-code.html"><i class="fa fa-check"></i><b>7</b> R code</a></li>
 <li class="chapter" data-level="8" data-path="package-metadata-wip.html"><a href="package-metadata-wip.html"><i class="fa fa-check"></i><b>8</b> Package metadata (WIP)</a></li>
 <li class="chapter" data-level="9" data-path="licensing-wip.html"><a href="licensing-wip.html"><i class="fa fa-check"></i><b>9</b> Licensing (WIP)</a></li>
-<li class="chapter" data-level="10" data-path="object-documentation-wip.html"><a href="object-documentation-wip.html"><i class="fa fa-check"></i><b>10</b> Object documentation (WIP)</a></li>
-<li class="chapter" data-level="11" data-path="vignettes-wip.html"><a href="vignettes-wip.html"><i class="fa fa-check"></i><b>11</b> Vignettes (WIP)</a></li>
+<li class="chapter" data-level="10" data-path="object-documentation.html"><a href="object-documentation.html"><i class="fa fa-check"></i><b>10</b> Object documentation</a></li>
+<li class="chapter" data-level="11" data-path="vignettes.html"><a href="vignettes.html"><i class="fa fa-check"></i><b>11</b> Vignettes</a></li>
 <li class="chapter" data-level="12" data-path="testing-wip.html"><a href="testing-wip.html"><i class="fa fa-check"></i><b>12</b> Testing (WIP)</a></li>
-<li class="chapter" data-level="13" data-path="namespace-wip.html"><a href="namespace-wip.html"><i class="fa fa-check"></i><b>13</b> Namespace (WIP)</a></li>
+<li class="chapter" data-level="13" data-path="namespace.html"><a href="namespace.html"><i class="fa fa-check"></i><b>13</b> Namespace</a></li>
 <li class="chapter" data-level="14" data-path="external-data-wip.html"><a href="external-data-wip.html"><i class="fa fa-check"></i><b>14</b> External data (WIP)</a></li>
 <li class="chapter" data-level="15" data-path="compiled-code-wip.html"><a href="compiled-code-wip.html"><i class="fa fa-check"></i><b>15</b> Compiled code (WIP)</a></li>
 <li class="chapter" data-level="16" data-path="installed-files-wip.html"><a href="installed-files-wip.html"><i class="fa fa-check"></i><b>16</b> Installed files (WIP)</a></li>
@@ -122,13 +122,12 @@
 <p><strong>Learning objectives:</strong></p>
 <ul>
 <li>Recall the rules for R package names.</li>
-<li>Use <code>available::available</code> to check whether a package name works.</li>
-<li>Use <code>usethis::create_package</code> to create a package and the associated RStudio Project.</li>
+<li>Use <code>available::available()</code> to check whether a package name works.</li>
+<li>Use <code>usethis::create_package()</code> to create a package and the associated RStudio Project.</li>
 <li>List key benefits of working with RStudio Projects.</li>
-<li>Recognize that exercising path discipline helps you avoid errors as your
-package changes states.</li>
-<li>List the benefits of <code>devtools::load_all</code>.</li>
-<li>Remember how to quickly call <code>devtools::load_all</code> in RStudio.</li>
+<li>Recognize that exercising path discipline helps you avoid errors as your package changes states.</li>
+<li>List the benefits of <code>devtools::load_all()</code>.</li>
+<li>Remember how to quickly call <code>devtools::load_all()</code> in RStudio.</li>
 </ul>
 </div>
 
@@ -139,7 +138,7 @@ package changes states.</li>
         </div>
       </div>
 <a href="package-structure-and-state.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="the-package-within-wip.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="the-package-within.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
