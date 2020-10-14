@@ -36,7 +36,7 @@ Don't forget to check out the [Learning Objectives for each week](https://r4ds.g
 
 - Cohort 1 - [Jon Harmon](https://twitter.com/jonthegeek): [slides](https://r4ds.github.io/bookclub-rpkgs/Presentations/Week01/Cohort1/chapters1-2.html#1) | [video](https://youtu.be/FR6NsbkYhcw)
 
-**2: How do I set up my system and get started?** Chapters [3 ("System setup")]() & [4 ("Package structure and state")]()
+**2: How do I set up my system and get started?** Chapters [3 ("System setup")](https://r4ds.github.io/bookclub-rpkgs/Companion/docs/system-setup.html) & [4 ("Package structure and state")](https://r4ds.github.io/bookclub-rpkgs/Companion/docs/package-structure-and-state.html)
 
 - Cohort 1 - [Asmae Toumi](https://twitter.com/asmae_toumi): [slides](https://r4ds.github.io/bookclub-rpkgs/Presentations/Week02/Cohort01/chap3-4.html#1) | [video](https://youtu.be/3r-EPc9XqxE)
 
