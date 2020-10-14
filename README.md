@@ -32,7 +32,7 @@ Don't forget to check out the [Learning Objectives for each week](https://r4ds.g
 
 ### Presentations & Recordings
 
-**1: Why should I read this book?** Chapters [1 ("Introduction")]() & [2 ("The whole game")](); Club goals overview
+**1: Why should I read this book?** Chapters [1 ("Introduction")](https://r4ds.github.io/bookclub-rpkgs/Companion/docs/introduction.html) & [2 ("The whole game")](https://r4ds.github.io/bookclub-rpkgs/Companion/docs/the-whole-game.html); Club goals overview
 
 - Cohort 1 - [Jon Harmon](https://twitter.com/jonthegeek): [slides](https://r4ds.github.io/bookclub-rpkgs/Presentations/Week01/Cohort1/chapters1-2.html#1) | [video](https://youtu.be/FR6NsbkYhcw)
 
