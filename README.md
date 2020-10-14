@@ -40,6 +40,6 @@ Don't forget to check out the [Learning Objectives for each week](https://r4ds.g
 
 - Cohort 1 - [Asmae Toumi](https://twitter.com/asmae_toumi): [slides](https://r4ds.github.io/bookclub-rpkgs/Presentations/Week02/Cohort01/chap3-4.html#1) | [video](https://youtu.be/3r-EPc9XqxE)
 
-**3: How should I work on my package?** Chapters [5 ("Fundamental development workflows")]() & [18 ("Git and GitHub")]()
+**3: How should I work on my package?** Chapters [5 ("Fundamental development workflows")](https://r4ds.github.io/bookclub-rpkgs/Companion/docs/fundamental-development-workflows.html) & [18 ("Git and GitHub")](https://r4ds.github.io/bookclub-rpkgs/Companion/docs/git-and-github.html)
 
 - Cohort 1 - [Tan Ho](https://https://twitter.com/_TanHo): [slides](https://r4ds.github.io/bookclub-rpkgs/Presentations/Week03/Cohort01/Development-Workflows-and-Git.html#1) | [video](https://youtu.be/DcV2km3Qx-g)
