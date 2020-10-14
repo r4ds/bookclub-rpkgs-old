@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 7 R code | R Packages Companion</title>
+  <title>Chapter 13 Namespace | R Packages Companion</title>
   <meta name="description" content="This is a companion to R Packages (second edition)." />
   <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 7 R code | R Packages Companion" />
+  <meta property="og:title" content="Chapter 13 Namespace | R Packages Companion" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="r4ds/bookclub-rpkgs" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 7 R code | R Packages Companion" />
+  <meta name="twitter:title" content="Chapter 13 Namespace | R Packages Companion" />
   
   <meta name="twitter:description" content="This is a companion to R Packages (second edition)." />
   
@@ -30,8 +30,9 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="the-package-within.html"/>
-<link rel="next" href="package-metadata-wip.html"/>
+<link rel="prev" href="testing-wip.html"/>
+<link rel="next" href="external-data-wip.html"/>
+<script src="libs/header-attrs-2.4/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -69,11 +70,13 @@
 <img src="images/r4ds.png" style="width:300px;height:180px;padding-bottom:0px;"></img>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="welcome.html"><a href="welcome.html"><i class="fa fa-check"></i>Welcome</a><ul>
+<li class="chapter" data-level="" data-path="welcome.html"><a href="welcome.html"><i class="fa fa-check"></i>Welcome</a>
+<ul>
 <li class="chapter" data-level="" data-path="welcome.html"><a href="welcome.html#parts-of-this-companion"><i class="fa fa-check"></i>Parts of this Companion</a></li>
 <li class="chapter" data-level="" data-path="welcome.html"><a href="welcome.html#suggested-order"><i class="fa fa-check"></i>Suggested Order</a></li>
 </ul></li>
-<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
 <li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#philosophy"><i class="fa fa-check"></i><b>1.1</b> Philosophy</a></li>
 <li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#in-this-book"><i class="fa fa-check"></i><b>1.2</b> In this book</a></li>
 </ul></li>
@@ -116,23 +119,29 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="r-code" class="section level1">
-<h1><span class="header-section-number">Chapter 7</span> R code</h1>
+<div id="namespace" class="section level1" number="13">
+<h1><span class="header-section-number">Chapter 13</span> Namespace</h1>
+<p>Prerequisite knowledge:</p>
+<ul>
+<li>Metadata about a package appears in the <code>DESCRIPTION</code> file.</li>
+<li>The <code>DESCRIPTION</code> can include a <code>Depends</code> field and/or an <code>Imports</code> field.</li>
+</ul>
+<p>If you’re using the Book Club’s recommended <a href="introduction.html#in-this-book">Machete Order</a>, you will not have been previously exposed to those prerequisites.</p>
 <div class="LO">
 <p><strong>Learning objectives:</strong></p>
 <ul>
-<li>List organizing principles for <code>.R</code> files in a package’s <code>R</code> directory.</li>
-<li>Use <code>devtools::load_all()</code> to check your code.</li>
-<li>Use the <code>styler</code> package to enforce a code style.</li>
-<li>Appreciate how build-time execution can cause issues in packages.</li>
-<li>Understand the dangers of changing the R landscape.</li>
-<li>Manage state with <code>withr</code>.</li>
-<li>Restore state with <code>base::on.exit()</code>.</li>
-<li>Isolate side effects in separate functions.</li>
-<li>Use <code>.onLoad()</code>, <code>.onAttach()</code>, and <code>.onUnload()</code> to modify the R landscape.</li>
-<li>Use <code>devtools::document()</code>, <code>devtools::test()</code>, and <code>devtools::check()</code> for fast feedback.</li>
-<li>Use <code>stringi::stri_escape_unicode()</code> to escape special characters.</li>
-<li>Use <code>tools::showNonASCII()</code> and <code>tools::showNonASCIIfile()</code> to locate special characters.</li>
+<li>Recognize that package namespaces are important for disambiguating functions and other objects with the same name.</li>
+<li>Understand what the search path is in R.</li>
+<li>Use <code>search()</code> to see the search path.</li>
+<li>Differentiate between loading and attaching.</li>
+<li>Understand the difference between <code>library(x)</code> and <code>requireNamespace("x", quietly = TRUE)</code>.</li>
+<li>Understand the difference between <code>Depends</code> and <code>Imports</code> in the package <code>DESCRIPTION</code>.</li>
+<li>Recognize the eight namespace directives: <code>export()</code>, <code>exportPattern()</code>, <code>exportClasses()</code>, <code>S3method()</code>, <code>import()</code>, <code>importFrom()</code>, <code>importClassesFrom()</code>, and <code>useDynLib()</code>.</li>
+<li>Use roxygen comments to <code>@export</code> a function.</li>
+<li>Recognize how to define exports for S3, S4, and RC.</li>
+<li>Differentiate between the <code>DESCRIPTION</code> <code>Imports</code> field and <code>NAMESPACE</code> <code>import()</code> and <code>importFrom()</code>.</li>
+<li>Understand when to use <code>::</code>, <code>@importFrom</code>, and <code>@import</code> to import functions from other packages.</li>
+<li>Remember how to import S4 classes and generics.</li>
 </ul>
 </div>
 
@@ -142,8 +151,8 @@
           </div>
         </div>
       </div>
-<a href="the-package-within.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="package-metadata-wip.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="testing-wip.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="external-data-wip.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -174,7 +183,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/r4ds/bookclub-rpkgs/edit/main/07-r_code.Rmd",
+"link": "https://github.com/r4ds/bookclub-rpkgs/edit/main/13-namespace.Rmd",
 "text": "Edit"
 },
 "history": {
