@@ -22,21 +22,24 @@ Don't forget to check out the [Learning Objectives for each week](https://r4ds.g
 
 *Cohort 1 - Tuesdays 8pm ET, starting 2020-09-29 - facilitated by Jon Harmon*
 
-- 3: Chapter 5, 18: Fundamental Development Workflows, Git/GitHub - [Tan Ho](https://twitter.com/_tanho) (2020-10-13)
-- 4: Chapter 6, 11: The package within, Vignettes - [Jon Harmon](https://twitter.com/JonTheGeek) (2020-10-20)
-- 5: Chapter 7, 10, 13: R Code, Object Documentation, Namespace - [Jon Leslie](https://twitter.com/jlesliedata) (2020-10-27)
-- 6: Chapter 12, 19: Testing, Automated checking
-- 7: Chapter 8, 9 Package Metadata, Licensing
-- 8: Chapter 14, 16: External Data, Installed Files
-- 9: Chapter 15, 17 - Compiled code and other components
-- 10: Chapter 20: Releasing a package (CRAN, GH)
+- **4: How do I convert a script to a package?** Chapters 6 ("The package within") & 11 ("Vignettes: long-form documentation") - [Jon Harmon](https://twitter.com/JonTheGeek) (2020-10-20)
+- **5: How do I write functions and document them?** Chapters 7 ("R code"), 10 ("Object documentation"), & 13 ("Namespace") - [Jon Leslie](https://twitter.com/jlesliedata) (2020-10-27)
+- **6: How do I make sure my package works?** Chapters 12 ("Testing") & 19 ("Automated checking")
+- **7: How do I describe my package?** Chapters 8 ("Package metadata") & 9 ("Licensing")
+- **8: How do I include things like data or other files?** Chapters 14 ("External data") & 16 ("Installed files")
+- **9: How do I use compiled code and other obscure package-y things?** Chapters 15 ("Compiled code") & 17 ("Other components")
+- **10: How do I release my package?** Chapter 20 ("Releasing a package")
 
 ### Presentations & Recordings
 
-1: Chapter 1, 2: Introduction, The Whole Game; Club Goals Overview
+**1: Why should I read this book?** Chapters 1 ("Introduction") & 2 ("The whole game"); Club goals overview
 
 - Cohort 1 - [Jon Harmon](https://twitter.com/jonthegeek): [slides](https://r4ds.github.io/bookclub-rpkgs/Presentations/Week01/Cohort1/chapters1-2.html#1) | [video](https://youtu.be/FR6NsbkYhcw)
 
-2: Chapter 3, 4: System Setup, Package Structure & State
+**2: How do I set up my system and get started?** Chapters 3 ("System setup") & 4 ("Package structure and state")
 
 - Cohort 1 - [Asmae Toumi](https://twitter.com/asmae_toumi): [slides](https://r4ds.github.io/bookclub-rpkgs/Presentations/Week02/Cohort01/chap3-4.html#1) | [video](https://youtu.be/3r-EPc9XqxE)
+
+**3: How should I work on my package?** Chapters 5 ("Fundamental development workflows") & 18 ("Git and GitHub")
+
+- Cohort 1 - [Tan Ho](https://https://twitter.com/_TanHo): [slides](https://r4ds.github.io/bookclub-rpkgs/Presentations/Week03/Cohort01/Development-Workflows-and-Git.html#1) | [video](https://youtu.be/DcV2km3Qx-g)
