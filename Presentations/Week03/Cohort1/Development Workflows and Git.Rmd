@@ -1,0 +1,81 @@
+---
+title: "RPkgs - How Should I Work On My Package?"
+author: "Tan Ho (@_TanHo)"
+date: "Last Updated: `r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css: libs/switch-themer.css
+    chakra: libs/remark.js
+    nature:
+      highlightLines: true
+    includes:
+      after_body: libs/toggle.html
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,
+                      warning = FALSE,
+                      message = FALSE,
+                      comment = "#>")
+xaringanExtra::use_tile_view()
+xaringanExtra::use_panelset()
+xaringanExtra::use_webcam()
+xaringanExtra::use_editable()
+xaringanExtra::use_extra_styles(
+  hover_code_line = TRUE,         
+  mute_unhighlighted_code = TRUE  
+)
+
+```
+
+## Outline
+
+In ch 5 and ch 18, we were introduced to some powerful workflow tools:
+
+- RStudio Projects & Devtools
+- Git & GitHub
+
+How do `I` use these tools to support developing a package? Let's set up a package on git!
+
+---
+## Warnings
+
+I use git `exclusively` from the terminal. I do this for a few reasons: 
+
+- I'm comfortable with terminals and commandline: I spend a fair bit of time with Linux terminals while configuring and deploying apps, and these are primarily accessed by terminal only.
+- Git was developed as a commandline program and 95% of the help resources you'll find on it are terminal based.
+
+There are `probably` equivalents on the various RStudio IDEs, and Hadley/Jenny mention a few of them, so it's entirely possible that you can map out your own equivalents to the commands I'll use. The important part is building up a mental model as to how git works and how you interact with it!  
+
+---
+## Resources
+
+Git Resources I highly recommend: 
+
+- Jenny Bryan's [Happy Git With R](https://www.happygitwithr.com) (comprehensive use of Git with R)
+- [OhShitGit Zine](https://jvns.ca/blog/2018/10/27/new-zine--oh-shit--git-/) - Julia Evans / Katie Sylor-Miller -> I find Julia Evans' zines so incredibly useful - also check out her zines on SQL and (soon) CSS 
+- [OhShitGit.com](https://ohshitgit.com) by Katie Sylor-Miller (alternatively, DangitGit.com for non-swearing)
+- Git Explorer [https://gitexplorer.com/](https://gitexplorer.com/)
+
+---
+
+## Setting Up DynastyProcessMisc Package
+
+- Motivations
+- Setup on GitHub 
+  (I do this first because of GH Projects, you can do the PC side first if you want)
+- Use Projects + Issues to roadmap 
+- Set up branch protections (to help enforce branching structure!)
+- Clone to PC
+- Checkout New Branch
+- Add R Code
+- Commit and Push
+- Make PR into your main, check off issues on your projects
+
+---
+
+## Links
+
+The repository and projects I set up will live at: [https://github.com/dynastyprocess/dpmisc](https://github.com/dynastyprocess/dpmisc)
