@@ -1,7 +1,7 @@
 book_filename: "rpkgs_companion"
 chapter_name: "Chapter "
 repo: https://github.com/r4ds/bookclub-rpkgs
-output_dir: docs
+output_dir: ..
 clean: [packages.bib, bookdown.bbl]
 new_session: yes
 rmd_files: [
