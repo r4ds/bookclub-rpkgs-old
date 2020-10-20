@@ -1,0 +1,40 @@
+---
+title: "R Packages"
+subtitle: "NAME THIS WEEK?"
+author: "YOU"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css: xaringan-themer.css
+    includes:
+      after_body: insert-logo.html
+---
+
+```{r libraries, include = FALSE}
+library(xaringanthemer)
+```
+
+```{r xaringan-themer, include = FALSE}
+style_mono_light(
+  base_color = "#3092FF",
+  header_font_google = google_font("Josefin Sans"),
+  text_font_google   = google_font("Montserrat", "300", "300i"),
+  code_font_google   = google_font("Droid Mono"),
+)
+```
+
+# This week's learning objectives
+
+- COPY FROM https://r4ds.github.io/bookclub-rpkgs/Companion/welcome.html
+
+---
+
+# Slide 1
+
+- Something
+
+---
+
+# Slide 2
+
+- Something else.
