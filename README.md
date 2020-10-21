@@ -22,12 +22,13 @@ Don't forget to check out the [Learning Objectives for each week](https://r4ds.g
 
 *Cohort 1 - Tuesdays 8pm ET, starting 2020-09-29 - facilitated by Jon Harmon*
 
-- **5: How do I write functions and document them?** Chapters [7 ("R code")](https://r4ds.github.io/bookclub-rpkgs/Companion/r-code.html), [10 ("Object documentation")](https://r4ds.github.io/bookclub-rpkgs/Companion/object-documentation.html), & [13 ("Namespace")](https://r4ds.github.io/bookclub-rpkgs/Companion/namespace.html) - [Jon Leslie](https://twitter.com/jlesliedata) (2020-10-27)
-- **6: How do I make sure my package works?** Chapters [12 ("Testing")]() & [19 ("Automated checking")]()
-- **7: How do I describe my package?** Chapters [8 ("Package metadata")]() & [9 ("Licensing")]()
-- **8: How do I include things like data or other files?** Chapters [14 ("External data")]() & [16 ("Installed files")]()
-- **9: How do I use compiled code and other obscure package-y things?** Chapters [15 ("Compiled code")]() & [17 ("Other components")]()
-- **10: How do I release my package?** Chapter [20 ("Releasing a package")]()
+- **5: How do I write functions and document them? (introduction)** Chapters [7 ("R code")](https://r4ds.github.io/bookclub-rpkgs/Companion/r-code.html), [10 ("Object documentation")](https://r4ds.github.io/bookclub-rpkgs/Companion/object-documentation.html), & [13 ("Namespace")](https://r4ds.github.io/bookclub-rpkgs/Companion/namespace.html) - [Jon Leslie](https://twitter.com/jlesliedata) (2020-10-27)
+- **6: How do I write functions and document them? (application)** Continued discussions of chapters 7, 10, and 13 (2020-11-03)
+- **7: How do I make sure my package works?** Chapters [12 ("Testing")]() & [19 ("Automated checking")]() - David Edison (2020-11-10)
+- **8: How do I make sure my package works?** Continuous Integration/GitHub Actions - [Jonathan Sidi](https://twitter.com/yoniceedee) (2020-11-17)
+- **9: How do I describe my package?** Chapters [8 ("Package metadata")]() & [9 ("Licensing")]()- TBD (2020-11-24)
+- **10: How do I include things like data and do obscure package-y things?** Chapters [14 ("External data")](), [15 ("Compiled code")](), [16 ("Installed files")](), and [17 ("Other components")]() - TBD (2020-12-01)
+- **11: How do I share and promote my package?** Chapter [20 ("Releasing a package")]() & Marketing/pkgdown - TBD (2020-12-08)
 
 ### Presentations & Recordings
 

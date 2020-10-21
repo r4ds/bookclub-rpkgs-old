@@ -54,16 +54,14 @@ Further to this objective, our book club cohort plans to tackle the chapters of 
 * Chapter 8: Package metadata
 * Chapter 9: Licensing
 
-**How do I include things like data or other files?**
+**How do I include things like data or do obscure package-y things?**
 
 * Chapter 14: External data
-* Chapter 16: Installed files
-
-**How do I use compiled code and other obscure package-y things?**
-
 * Chapter 15: Compiled code
+* Chapter 16: Installed files
 * Chapter 17: Other components
 
-**How do I release my package?**
+**How do I share and promote my package?**
 
 * Chapter 20: Releasing a package
+* (Missing chapter about pkgdown)
