@@ -1,0 +1,195 @@
+---
+title: "R Packages"
+subtitle: "How do I convert a script to a package?"
+author: "Jon Harmon"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css: xaringan-themer.css
+    includes:
+      after_body: insert-logo.html
+---
+
+```{r libraries, include = FALSE}
+library(xaringanthemer)
+```
+
+```{r xaringan-themer, include = FALSE}
+style_mono_light(
+  base_color = "#3092FF",
+  header_font_google = google_font("Josefin Sans"),
+  text_font_google   = google_font("Montserrat", "300", "300i"),
+  code_font_google   = google_font("Droid Mono"),
+)
+```
+
+# Vignette-Driven Development: What?
+
+- **Vignette** = "long-form guide to your package."
+- Rmarkdown doc.
+- Shows how to solve a problem using your package.
+- I do my day-to-day work as vignettes.
+
+---
+
+# Vignette-Driven Development: How?
+
+- *Start* each analysis as a vignette (new or existing package).
+- **Separate** analysis from helper functions.
+- **Move** helper functions into package.
+- **Reuse** helper functions.
+
+---
+
+# Let's Try!
+
+- I'll build a package by converting the script in Chapter 6 into a vignette!
+- The package (including commit history to produce it) is on [github](https://github.com/jonthegeek/within).
+
+---
+
+# Create the Package
+
+- `usethis::create_package("../within")`
+- Build > More > Configure Build Tools...
+- Clean the DESCRIPTION (will discuss more in a few weeks)
+
+```
+Package: within
+Title: An Example of Vignette-Driven Package Development
+Version: 0.0.0.9000
+Authors@R: person(given = "Jon",
+    family = "Harmon",
+    role = c("aut", "cre"),
+    email = "jonthegeek@gmail.com",
+    comment = c(ORCID = "0000-0003-4781-4346"))
+Description: This package was built to demonstrate building a package starting 
+    with a repetitive task in a vignette.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
+```
+
+---
+
+# Set Up GitHub
+
+- `usethis::use_git()`
+- `usethis::use_github()`
+
+---
+
+# Start the Vignette
+
+- `usethis::use_vignette("swim-data", "Working with Swim Data")`
+- Start explaining the process in the vignette:
+
+```
+We collect reports from people who went for a swim by asking this question:
+
+> Where did you swim and how hot was it outside?
+
+The data usually comes as a CSV file, which we read into a data frame.
+```
+
+- In bookclub project, copy swim.csv to within/vignettes dir.
+- ctrl-shift-B to build package (often!).
+
+---
+
+# Code Blocks
+
+- r shift-tab to insert an R code block.
+- Copy the contents of bravo-baseline.R from bookclub proj to the vignette.
+- Fully qualify all function calls.
+- Remove `library` call.
+
+---
+
+# Test Often!
+
+- ctrl-shift-K
+- {sad trombone}
+- `usethis::use_pipe()`
+- ctrl-shift-B
+- ctrl-shift-K
+
+---
+
+# Organize
+
+- Split into clean-data and write-data blocks.
+- Create file for the first block: `usethis::use_r("clean-data")`
+
+---
+
+# Functionize clean-data
+
+- `dat <- dat %>% localize_beach()`
+- Write `localize_beach` function in `cleaning-helpers.R` (ctrl-alt-x).
+- ctrl-shift-B
+- ctrl-shift-K
+- {sad trombone}
+- `#' @export` (we'll learn what this is next week)
+
+---
+
+# Functionize clean-data (continued)
+
+- `%>% celsify_temp()`
+- `celsify_temp` in `cleaning-helpers.R`
+- ctrl-shift-B
+- ctrl-shift-K
+
+---
+
+# Functionize write-data
+
+- `usethis::use_r("write-data")`
+- `outfile <- make_outfile_path(infile)`
+- `make_outfile_path` function.
+- `.pretty_now` and `.clean_path` functions.
+ - They put the Sys.time outside to prove a point, but don't do that.
+- ctrl-shift-B
+- ctrl-shift-K
+
+---
+
+# A Second Vignette
+
+- `usethis::use_vignette("thanking-submitters", "Thanking Submitters")`
+- Wrap functions into `clean_swim_data`.
+
+---
+
+# Check Learning Objectives
+
+- Understand how to **organize scripts** into **objects** and **functions.** `r emo::ji("heavy_check_mark")`
+- Recognize how to **separate analysis from helper functions.** `r emo::ji("heavy_check_mark")`
+- **Recognize errors** that can occur when converting a script to a package. `r emo::ji("heavy_check_mark")`
+- Recognize that **top-level R code** is executed when a package is **built.**
+- Be very mindful about **changing a user’s overall state** from within a package.
+- Define a **vignette** as a **long-form guide** to your package. `r emo::ji("heavy_check_mark")`
+- Create a vignette with `usethis::use_vignette()`. `r emo::ji("heavy_check_mark")`
+- Recognize the **metadata fields** in a vignette. `r emo::ji("heavy_check_mark")`
+- Remember that **markdown** allows you to format your vignette.
+- Understand how to **intermingle R code** and text in vignettes. `r emo::ji("heavy_check_mark")`
+- Remember how to **view your vignette** as it will appear to a user. `r emo::ji("heavy_check_mark")`
+
+---
+
+# Check Learning Objectives
+
+- Understand how to **organize scripts** into **objects** and **functions.** `r emo::ji("heavy_check_mark")`
+- Recognize how to **separate analysis from helper functions.** `r emo::ji("heavy_check_mark")`
+- **Recognize errors** that can occur when converting a script to a package. `r emo::ji("heavy_check_mark")`
+- Recognize that **top-level R code** is executed when a package is **built.** `r emo::ji("heavy_check_mark")`
+- Be very mindful about **changing a user’s overall state** from within a package. `r emo::ji("heavy_check_mark")`
+- Define a **vignette** as a **long-form guide** to your package. `r emo::ji("heavy_check_mark")`
+- Create a vignette with `usethis::use_vignette()`. `r emo::ji("heavy_check_mark")`
+- Recognize the **metadata fields** in a vignette. `r emo::ji("heavy_check_mark")`
+- Remember that **markdown** allows you to format your vignette. `r emo::ji("heavy_check_mark")`
+- Understand how to **intermingle R code** and text in vignettes. `r emo::ji("heavy_check_mark")`
+- Remember how to **view your vignette** as it will appear to a user. `r emo::ji("heavy_check_mark")`
