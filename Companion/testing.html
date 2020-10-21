@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 8 Package metadata (WIP) | R Packages Companion</title>
+  <title>Chapter 12 Testing | R Packages Companion</title>
   <meta name="description" content="This is a companion to R Packages (second edition)." />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 8 Package metadata (WIP) | R Packages Companion" />
+  <meta property="og:title" content="Chapter 12 Testing | R Packages Companion" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="r4ds/bookclub-rpkgs" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 8 Package metadata (WIP) | R Packages Companion" />
+  <meta name="twitter:title" content="Chapter 12 Testing | R Packages Companion" />
   
   <meta name="twitter:description" content="This is a companion to R Packages (second edition)." />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="r-code.html"/>
-<link rel="next" href="licensing-wip.html"/>
+<link rel="prev" href="vignettes.html"/>
+<link rel="next" href="namespace.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -116,12 +116,22 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="package-metadata-wip" class="section level1">
-<h1><span class="header-section-number">Chapter 8</span> Package metadata (WIP)</h1>
+<div id="testing" class="section level1">
+<h1><span class="header-section-number">Chapter 12</span> Testing</h1>
 <div class="LO">
 <p><strong>Learning objectives:</strong></p>
 <ul>
-<li>TBD</li>
+<li>List some benefits of automated testing.</li>
+<li>Use <code>usethis::use_testhat</code> to set up a package for testing.</li>
+<li>Implement a package development workflow that includes testing.</li>
+<li>Understand the relationship between expectations, tests, and test files.</li>
+<li>Describe the structure of an expectation.</li>
+<li>Combine expectations into a test.</li>
+<li>Recognize actions that require manual cleanup during testing.</li>
+<li>Understand that tests can be skipped in some situations.</li>
+<li>Know where to look if you need to build your own custom expectations.</li>
+<li>Use usethis::use_test() to generate a test file.</li>
+<li>List the caveats about testing on CRAN.</li>
 </ul>
 </div>
 
@@ -131,8 +141,8 @@
           </div>
         </div>
       </div>
-<a href="r-code.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="licensing-wip.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="vignettes.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="namespace.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -163,7 +173,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/r4ds/bookclub-rpkgs/edit/main/08-package_metadata.Rmd",
+"link": "https://github.com/r4ds/bookclub-rpkgs/edit/main/12-testing.Rmd",
 "text": "Edit"
 },
 "history": {
