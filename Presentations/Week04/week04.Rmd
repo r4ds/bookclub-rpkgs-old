@@ -44,6 +44,7 @@ style_mono_light(
 # Let's Try!
 
 - I'll build a package by converting the script in Chapter 6 into a vignette!
+- The package (including commit history to produce it) is on [github](https://github.com/jonthegeek/within).
 
 ---
 
