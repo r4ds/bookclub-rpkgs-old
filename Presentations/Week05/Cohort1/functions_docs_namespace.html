@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Functions, documentation and namespace: an introduction</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Jon Leslie (@jlesliedata)" />
+    <script src="libs/header-attrs-2.3/header-attrs.js"></script>
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Functions, documentation and namespace: an introduction
+## Chapters 7, 10 &amp; 13
+### Jon Leslie (<span class="citation">@jlesliedata</span>)
+### Last Updated: 2020-10-25
+
+---
+
+
+
+
+
+&lt;style&gt;
+.pull-more-left {
+  float: left;
+  width: 40%;
+}
+.pull-less-right {
+  float: right;
+  width: 56%;
+}
+.pull-less-right ~ * {
+  clear: both;
+}
+.remark-code-line {
+  font-size: 0.7em !important;
+}
+&lt;/style&gt;
+
+
+
+# The general idea:
+.center[
+![general_idea](www/general_idea.png)
+]
+
+---
+# The general idea:
+.center[
+![general_idea_chapters](www/general_idea_chapters.png)
+]
+
+---
+
+# Chapter 7: R code
+Two important rules:
+- Functions go in `.R` scripts in the `R/` directory
+- Use these verbs:
+  - `load_all()`
+  - `test()`
+  - `check()`
+
+---
+## Organising functions into files
+A good rule-of-thumb is that a single `.R` file should contain:
+- Multiple, related function definitions and helpers **OR**
+- A family of related functions
+
+&lt;br&gt;&lt;br&gt;
+
+Make them available with `devtools::load_all()`
+
+---
+## Code style
+The tidyverse style guide ([https://style.tidyverse.org](https://style.tidyverse.org)) explains "what" and "why"
+The styler package ([https://styler.r-lib.org/](https://styler.r-lib.org/)) tells you "how"
+
+
+```r
+library(styler)
+ugly_code &lt;- "a=function( x){1 + 1}        "
+style_text(ugly_code)
+```
+
+```
+## a &lt;- function(x) {
+##   1 + 1
+## }
+```
+
+---
+## Execution
++ With scripts, code is executed when it's __run__.
+
++ In packages, code is executed when it's __built__. 
+
++ Therefore, package code should only create objects (usually functions).
+
+### Example:
+`x &lt;- Sys.time()`
++ if put in a script, `x` reports when the script was `source()`d.
++ if put in a package, `x` reports when the package binary was built.
+
+## Solution: put code into functions
+
+---
+### Example: `system.file()`
+
+
+```r
+dataTableDependency &lt;- list(
+  htmlDependency(
+    "datatables", "1.10.2",
+*   c(file = system.file("www/datatables", package = "shinybootstrap2")),
+    script = "js/jquery.dataTables.min.js"
+  ),
+  htmlDependency(
+    "datatables-bootstrap", "1.10.2",
+*   c(file = system.file("www/datatables", package = "shinybootstrap2")),
+    stylesheet = c("css/dataTables.bootstrap.css", "css/dataTables.extra.css"),
+    script = "js/dataTables.bootstrap.js"
+  )
+)
+```
+
+
+```r
+dataTableDependency &lt;- function() {
+* list(
+    htmlDependency(
+      "datatables", "1.10.2",
+      c(file = system.file("www/datatables", package = "shinybootstrap2")),
+      script = "js/jquery.dataTables.min.js"
+    ),
+    htmlDependency(
+      "datatables-bootstrap", "1.10.2",
+      c(file = system.file("www/datatables", package = "shinybootstrap2")),
+      stylesheet = c("css/dataTables.bootstrap.css", "css/dataTables.extra.css"),
+      script = "js/dataTables.bootstrap.js"
+    )
+  )
+)
+}
+```
+
+---
+### Example: available colours
+
+```r
+show_ansi_colors &lt;- function(colors = num_colors()) {
+  if (colors &lt; 8) {
+    cat("Colors are not supported")
+  } else if (colors &lt; 256) {
+    cat(ansi_colors_8, sep = "")
+    invisible(ansi_colors_8)
+  } else {
+    cat(ansi_colors_256, sep = "")
+    invisible(ansi_colors_256)
+  }
+}
+
+ansi_colors_8 &lt;- # code to generate a vector covering basic terminal colors
+  
+ansi_colors_256 &lt;- # code to generate a vector covering 256 colors
+```
+Problem: the character vectors `ansi_colors_8` and `ansi_colors_256` were formed and cached when the binary package was built. (Often happens on a headless server, where terminal colours might not be available.)
+
+This solves it:
+
+```r
+ansi_colors_8 &lt;- function() {
+  # code to generate a vector covering basic terminal colors
+}
+  
+ansi_colors_256 &lt;- function() {
+  # code to generate a vector covering 256 colors
+}
+```
+
+---
+### Example: aliasing a function
+
+```r
+foo &lt;- pkgB::blah
+```
+
+This will cause `foo()` to reflec the definition of `pkgb::blah()` at the version present on the machine where the binary package is built.
+
+This solves it:
+
+```r
+foo &lt;- function(...) pkgB::blah(...)
+```
+
+
+
+---
+## The R landscape
++ Other people are going to use your package (maybe) in situations that you might not expect.
++ You must pay attention to the R landscape, including the global settings
++ These are common problems:
+  + `library()`, `require()`
+      + These modify the search path
+  + `options()`
+  + `setwd()`
+  + `source()`
+      + Modifies the current environment
++ If the behaviour of _other_ functions differs before and after running your functions
++ Other functions to avoid:
+  + `par()`
+  + `Sys.setenv()`
+  + `Sys.setlocale()`
+  + `set.seed()`
+
+
+---
+### If you __must__ change the R landscape, manage state with `withr`
+`on.exit()`-like toolkit
+.pull-left[
+
+```r
+sloppy &lt;- function(x, sig_digits) {
+  options(digits = sig_digits)
+  print(x)
+}
+
+pi
+#&gt; [1] 3.141593
+
+sloppy(pi, 2)
+#&gt; [1] 3.1
+
+pi
+#&gt; [1] 3.1
+```
+]
+
+.pull-right[
+
+```r
+neat &lt;- function(x, sig_digits) {
+  op &lt;- options(digits = sig_digits)
+* on.exit(options(op), add = TRUE)
+  print(x)
+}
+
+pi
+#&gt; [1] 3.141593
+
+neat(pi, 2)
+#&gt; [1] 3.1
+
+pi
+#&gt; [1] 3.141593
+```
+
+
+```r
+neater &lt;- function(x, sig_digits) {
+  op &lt;- options(digits = sig_digits)
+* defer(options(op))
+  print(x)
+}
+
+pi
+#&gt; [1] 3.141593
+
+neater(pi, 2)
+#&gt; [1] 3.1
+
+pi
+#&gt; [1] 3.141593
+```
+]
+
+---
+### `withr` comes with some handy helper functions:
+
+|Do/undo.this                |withr.functions                 |
+|:---------------------------|:-------------------------------|
+|Set an R option             |local_options(), with_options() |
+|Set an environment variable |local_envvar(), with_envvar()   |
+|Change working directory    |local_dir(), with_dir()         |
+|Set a graphics parameter    |local_par(), with_par()         |
+
+`with_*()` are best for exectuing a small snipped of code with a modified state
+
+`local_*()` are for modifying state "from now until the function exits"
+
+You can even schedule deferred actions on the global environment. (Useful when experimenting with code that needs to be cleaned up "on exit".)
+
+---
+### Isolate side effects
+
+For instance, creating plots or printing output.
+
+Good practice is to isolate them in functions that only produce output.
+---
+### `.onLoad()` and `.onAttach()`
+Use for initial setup when the package loads
+
+For example:
++ To display a message when the package loads
++ To set custom options with `options()`
++ To connect R to another programming language
++ To register vignette engines
+
+If you use `.onLoad()`, you should use `.onUnload()` to clean up any side effects.
+
+---
+## Check your package's health
+Use `load_all()`, `document()`, `test()` and `check()` liberally (several times an hour, for instance)
+
+It's easier to run these and fix problems "now" than to wait until "later"
+
+---
+## CRAN notes
+You must use only use ASCII characters in your scripts
+You can inline non-ASCII character data with Unicode (`"\u1234"`) format.
+You can find the correct Unicode code point with `stringi::stri_escape_unicode()`:
+
+```r
+x &lt;- "This is a bullet •"
+cat(stringi::stri_escape_unicode(x))
+```
+
+```
+## This is a bullet \u2022
+```
+
+The functions `tools::showNonASCII()` and `tools::showNonASCIIfile(file)` can help you find non-ASCII characters in your R code. 
+
+---
+# Chapter 10 Object documentation
+.center[
+![](www/general_idea_chapters.png)
+]
+
+---
+# Chapter 10 Object documentation
+
+Documentation occurs via `.Rd` files in the `man/` directory
+
+Use roxygen2 to create `.Rd` files
+
+Roxygen2 can also manage `NAMESPACE` file and `Collate` field in `DESCRIPTION` file
+---
+## Four steps to documentation:
+1. Add roxygen comments to your `.R` file.
+1. Run `devtools::document()` to convert roxygen comments to `.Rd` files.
+    + (or press Ctrl/Cmd + Shift + D in RStudio)
+1. Preview documentation with `?`.
+1. Rinse and repeat.
+
+### However:
+Preview documentation pages created with `devtools::document()` will not show links between pages. 
+
+If you need this, you must build and reload (Ctrl/Cmd + Shift + B).
+
+---
+## Roxygen comments
+.pull-left[
+![](www/01_code.png)
+]
+.pull-right[
+![](www/01_Rd_file.png)
+]
+
+---
+## Roxygen comments
+.pull-left[
+![](www/01_code.png)
+]
+.pull-right[
+![](www/01_output.png)
+]
+
+---
+## Roxygen comments - functions
+.pull-left[
+Just saw:
++ `@param name description`
+  + Describes the function's inputs
++ `@return description`
+  + Describes the output
++ `@examples`
+  + Provides executable R code showing how to use the function
+  + Can include a `dontrun{}` to include code that causes an error
++ `@example path/relative/to/package/root`
+  + To use examples in a separate file
+]
+
+.pull-right[
+Other important ones:
++ `@export`
+  + makes function available to a user after attaching package
++ `@seealso`
+  + Allows you to point to other resources
++ `@family`
+  + To link to every other related function in a "family"
+  + Aliases and topics can be accessed with `?`
++ `@aliases`
+  + adds additional aliases to the "topic"
++ `@keywords`
+  + Must be taken from a predifined list 
+]
+
+---
+## Roxygen comments - datasets
+
++ Coming to a book club near you! (Week 10)
+
+---
+## Roxyngen comments - packages
+
+Can provide a help page for your package as a whole.
+
+This is a supplement to the vignettes.
+
+Document `NULL` and label with `@docType package` and `@name &lt;package-name&gt;`
+
+
+```r
+#' foo: A package for computating the notorious bar statistic
+#'
+#' The foo package provides three categories of important functions:
+#' foo, bar and baz.
+#' 
+#' @section Foo functions:
+#' The foo functions ...
+#'
+#' @docType package
+#' @name foo
+NULL
+#&gt; NULL
+```
+
+---
+## Documenting classes, generics and methods
+
+### S3
+S3 **generics** are regular functions and should be documented as such
+
+S3 **classes** have no formal definition, so document the constructor function 
+
+S3 **methods** should be documented in the more complicated cases (or if it includes additional arguements)
+
+
+---
+### S4
+S4 **generics** are functions and should be documented as such
+
+S4 **classes** are documented by adding a roxygen block before `setClass()`
++ Use `@slot` to document the slots of the class a la `@param` above:
+
+```r
+#' An S4 class to represent a bank account.
+#'
+#' @slot balance A length-one numeric vector
+Account &lt;- setClass("Account",
+  slots = list(balance = "numeric")
+)
+```
+
+S4 **methods** are complicated:
++ All S4 methods must be documented in one of three ways:
+  1. In the class
+  1. In the generic
+  1. In its own file
+
+
+---
+### RC
+Has a special convention for documenting **methods**: the **docstring**.
+
+Docstrings are included in the "Methods" section of the **class** documentation.
+
+
+---
+## Special characters
++ `"@"` is inserted with `@@`.
+
++ `%` is escaped with `\%`. (Not needed in examples).
+
++ `\` is inserted with `\\`.
+
+---
+## Creating self-contained documentation
+### Inheriting parameters
++ `@inheritParams source_function` to bring in documentation from other functions.
++ Can be in current package (`@inheritParams function`) or another package (`@inheritParams package::function`)
+
+.pull-left[
+
+```r
+#' @param a This is the first argument
+foo &lt;- function(a) a + 10
+
+#' @param b This is the second argument
+#' @inheritParams foo
+bar &lt;- function(a, b) {
+  foo(a) * 10
+}
+```
+]
+
+.pull-right[
+
+```r
+#' @param a This is the first argument
+#' @param b This is the second argument
+bar &lt;- function(a, b) {
+  foo(a) * 10
+}
+```
+
+]
+
+---
+### Documenting multiple functions in the same file
+Use when functions have very similar arguments or have complementary effects.
+#### 1. `@describeIn`
++ For the most common cases:
+  + Documenting methods in generics
+  + Documenting methods in a class
+  + Documenting functions with similar arguments
+  
+---
+  
+
+```r
+#' Foo bar generic
+#'
+#' @param x Object to foo.
+foobar &lt;- function(x) UseMethod("foobar")
+
+#' @describeIn foobar Difference between the mean and the median
+foobar.numeric &lt;- function(x) abs(mean(x) - median(x))
+
+#' @describeIn foobar First and last values pasted together in a string.
+foobar.character &lt;- function(x) paste0(x[1], "-", x[length(x)])
+```
+
+.center[
+&lt;img src="www/02_describeIn.png" width="50%" /&gt;
+]
+---
+#### 2. `@rdname`
+Allows you to merge documentation for multiple objects into one file
+
+See more about this next week?
+
+---
+# Namespace
+.center[
+![](www/general_idea_chapters.png)
+]
+
+---
+# Namespace
+A space for names
+
+Tells R where to find the value associated with a name:
+
+.center[`Hmisc::summarize()` v. `plyr::summarize()`]
+
+Make your package self-contained in two ways:
+1. Imports
+  + Defines how a function in one package finds a function in another
+1. Exports
+  + Specifies which functions are available outside your package
+
+---
+## Search path
+The list of all packages that are **attached**.
+
+Access with `search()`
+
+.pull-left[
+### Loading
++ Loads the package into memory
++ Package **is not** in the search path
++ Access components with `::`
++ Rarely done explicitly, but often used in packages
++ Found under `Imports` in `DESCRIPTION` file.
+]
+
+.pull-right[
+### Attaching
++ Puts the package in the search path
++ Accomplished with `library()` or `require()`
++ Also loads the package
++ Accessed with `search()`
++ Found under `Depends` in `DESCRIPTION` file.
+]
+
+---
+## The `NAMESPACE` file
+Each line contains a **directive**.
+
+Each directive describes an R object (4 for exports, 4 for imports).
+
+Use Roxygen2 to generate the `NAMESPACE` file just like for function documentation:
+1. Add roxygen comments to your .R files.
+1. Run `devtools::document()` to convert to `.Rd` files.
+1. Check that specification is correct in `NAMESPACE`.
+1. Rinse and repeat.
+
+
+
+---
+## Exports
+Good practice is to only export functions that others will use.
+
+Create with `@export` in the roxygen block.
+
+For S3, S4 or RC, you should export different things. 
+
+.center[## To be discussed next week!]
+
+---
+## Imports
+`NAMESPACE` controls with external functions can be used by your package without having to use `::`.
+
+Confusion: `Imports` field of the `DESCRIPTION` file versus import directive of `NAMESPACE` file. 
++ Authors' advice: list packages in `DESCRIPTION` (so it's installed) and refer to it explicitly with `pkg::fun()`.
++ R functions can be imported explicitly in `DESCRIPTION` with `@importFrom pkg fun`.
++ Works with operators as well: `@importFrom magrittr %&gt;%`
+
+S3 generics imported like regular functions. Methods will come along.
+
+S4 is more complicated. 
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+
+class: inverse, hide-logo
+
+# Another Slide
+This slide doesn't have a logo
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightLines": true
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+<style>
+.logo {
+  background-image: url(r4ds.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  width: 110px;
+  height: 128px;
+  z-index: 0;
+}
+</style>
+
+<script>
+document
+  .querySelectorAll(
+    '.remark-slide-content' +
+    ':not(.title-slide)' +
+    // add additional classes to exclude here, e.g.
+    // ':not(.inverse)' +
+    ':not(.hide-logo)'
+  )
+  .forEach(el => {
+    el.innerHTML += '<div class="logo"></div>';
+  });
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
