@@ -14,7 +14,7 @@ class: center, middle, inverse, title-slide
 # Functions, documentation and namespace: an introduction
 ## Chapters 7, 10 &amp; 13
 ### Jon Leslie (<span class="citation">@jlesliedata</span>)
-### Last Updated: 2020-10-26
+### Last Updated: 2020-10-28
 
 ---
 
@@ -317,8 +317,10 @@ It's easier to run these and fix problems "now" than to wait until "later"
 
 ---
 ## CRAN notes
-You must use only use ASCII characters in your scripts
+You must use only use ASCII characters in your scripts.
+
 You can inline non-ASCII character data with Unicode (`"\u1234"`) format.
+
 You can find the correct Unicode code point with `stringi::stri_escape_unicode()`:
 
 ```r
@@ -445,7 +447,7 @@ S3 **generics** are regular functions and should be documented as such
 
 S3 **classes** have no formal definition, so document the constructor function 
 
-S3 **methods** should be documented in the more complicated cases (or if it includes additional arguements)
+S3 **methods** should be documented in the more complicated cases (or if it includes additional arguments)
 
 
 ---
@@ -521,7 +523,7 @@ bar &lt;- function(a, b) {
 ---
 ### Documenting multiple functions in the same file
 Use when functions have very similar arguments or have complementary effects.
-#### 1. `@describeIn`
+#### `@describeIn`
 + For the most common cases:
   + Documenting methods in generics
   + Documenting methods in a class
@@ -547,7 +549,7 @@ foobar.character &lt;- function(x) paste0(x[1], "-", x[length(x)])
 &lt;img src="www/02_describeIn.png" width="50%" /&gt;
 ]
 ---
-#### 2. `@rdname`
+#### `@rdname`
 Allows you to merge documentation for multiple objects into one file
 
 See more about this next week?
@@ -622,7 +624,7 @@ For S3, S4 or RC, you should export different things.
 
 ---
 ## Imports
-`NAMESPACE` controls with external functions can be used by your package without having to use `::`.
+`NAMESPACE` controls which external functions can be used by your package without having to use `::`.
 
 Confusion: `Imports` field of the `DESCRIPTION` file versus import directive of `NAMESPACE` file. 
 + Authors' advice: list packages in `DESCRIPTION` (so it's installed) and refer to it explicitly with `pkg::fun()`.
