@@ -618,17 +618,7 @@ S4 is more complicated.
 
 ---
 
----
 
----
-
----
-
----
-
----
-
----
 
 
 class: inverse, hide-logo
