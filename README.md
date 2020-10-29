@@ -22,7 +22,6 @@ Don't forget to check out the [Learning Objectives for each week](https://r4ds.g
 
 *Cohort 1 - Tuesdays 8pm ET, starting 2020-09-29 - facilitated by Jon Harmon*
 
-- **5: How do I write functions and document them? (introduction)** Chapters [7 ("R code")](https://r4ds.github.io/bookclub-rpkgs/Companion/r-code.html), [10 ("Object documentation")](https://r4ds.github.io/bookclub-rpkgs/Companion/object-documentation.html), & [13 ("Namespace")](https://r4ds.github.io/bookclub-rpkgs/Companion/namespace.html) - [Jon Leslie](https://twitter.com/jlesliedata) (2020-10-27)
 - **6: How do I write functions and document them? (application)** Continued discussions of chapters 7, 10, and 13 (2020-11-03)
 - **7: How do I make sure my package works?** Chapters [12 ("Testing")]() & [19 ("Automated checking")]() - David Edison (2020-11-10)
 - **8: How do I make sure my package works?** Continuous Integration/GitHub Actions - [Jonathan Sidi](https://twitter.com/yoniceedee) (2020-11-17)
@@ -47,3 +46,7 @@ Don't forget to check out the [Learning Objectives for each week](https://r4ds.g
 **4: How do I convert a script to a package?** Chapters [6 ("The package within")](https://r4ds.github.io/bookclub-rpkgs/Companion/the-package-within.html) & [11 ("Vignettes: long-form documentation")](https://r4ds.github.io/bookclub-rpkgs/Companion/vignettes.html)
 
 - Cohort 1 - [Jon Harmon](https://twitter.com/JonTheGeek): [slides](https://r4ds.github.io/bookclub-rpkgs/Presentations/Week04/Cohort01/week04.html#1) | [video](https://youtu.be/eMWgu9OQ0m8)
+
+**5: How do I write functions and document them? (introduction)** Chapters [7 ("R code")](https://r4ds.github.io/bookclub-rpkgs/Companion/r-code.html), [10 ("Object documentation")](https://r4ds.github.io/bookclub-rpkgs/Companion/object-documentation.html), & [13 ("Namespace")](https://r4ds.github.io/bookclub-rpkgs/Companion/namespace.html) 
+
+- Cohort 1 - [Jon Leslie](https://twitter.com/jlesliedata): [slides](https://r4ds.github.io/bookclub-rpkgs/Presentations/Week05/Cohort01/functions_docs_namespace.html#1) | VIDEO
