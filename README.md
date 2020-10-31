@@ -49,4 +49,4 @@ Don't forget to check out the [Learning Objectives for each week](https://r4ds.g
 
 **5: How do I write functions and document them? (introduction)** Chapters [7 ("R code")](https://r4ds.github.io/bookclub-rpkgs/Companion/r-code.html), [10 ("Object documentation")](https://r4ds.github.io/bookclub-rpkgs/Companion/object-documentation.html), & [13 ("Namespace")](https://r4ds.github.io/bookclub-rpkgs/Companion/namespace.html) 
 
-- Cohort 1 - [Jon Leslie](https://twitter.com/jlesliedata): [slides](https://r4ds.github.io/bookclub-rpkgs/Presentations/Week05/Cohort01/functions_docs_namespace.html#1) | VIDEO
+- Cohort 1 - [Jon Leslie](https://twitter.com/jlesliedata): [slides](https://r4ds.github.io/bookclub-rpkgs/Presentations/Week05/Cohort01/functions_docs_namespace.html#1) | [video](https://youtu.be/BN0mBuuLKz8)
