@@ -22,7 +22,6 @@ Don't forget to check out the [Learning Objectives for each week](https://r4ds.g
 
 *Cohort 1 - Tuesdays 8pm ET, starting 2020-09-29 - facilitated by Jon Harmon*
 
-- **6: How do I write functions and document them? (application)** Continued discussions of chapters 7, 10, and 13 (2020-11-03)
 - **7: How do I make sure my package works?** Chapters [12 ("Testing")]() & [19 ("Automated checking")]() - David Edison (2020-11-10)
 - **8: How do I make sure my package works?** Continuous Integration/GitHub Actions - [Jonathan Sidi](https://twitter.com/yoniceedee) (2020-11-17)
 - **9: How do I describe my package?** Chapters [8 ("Package metadata")]() & [9 ("Licensing")]()- TBD (2020-11-24)
@@ -50,3 +49,7 @@ Don't forget to check out the [Learning Objectives for each week](https://r4ds.g
 **5: How do I write functions and document them? (introduction)** Chapters [7 ("R code")](https://r4ds.github.io/bookclub-rpkgs/Companion/r-code.html), [10 ("Object documentation")](https://r4ds.github.io/bookclub-rpkgs/Companion/object-documentation.html), & [13 ("Namespace")](https://r4ds.github.io/bookclub-rpkgs/Companion/namespace.html) 
 
 - Cohort 1 - [Jon Leslie](https://twitter.com/jlesliedata): [slides](https://r4ds.github.io/bookclub-rpkgs/Presentations/Week05/Cohort01/functions_docs_namespace.html#1) | [video](https://youtu.be/BN0mBuuLKz8)
+
+**6: How do I write functions and document them? (names)** Continued discussions of chapters 7, 10, and 13
+
+- Cohort 1 - [Jon Harmon](https://twitter.com/JonTheGeek): [video](https://youtu.be/oCbDqT8uIHY)
