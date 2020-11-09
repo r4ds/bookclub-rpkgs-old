@@ -44,7 +44,7 @@ Don't forget to check out the [Learning Objectives for each week](https://r4ds.g
 
 **4: How do I convert a script to a package?** Chapters [6 ("The package within")](https://r4ds.github.io/bookclub-rpkgs/Companion/the-package-within.html) & [11 ("Vignettes: long-form documentation")](https://r4ds.github.io/bookclub-rpkgs/Companion/vignettes.html)
 
-- Cohort 1 - [Jon Harmon](https://twitter.com/JonTheGeek): [slides](https://r4ds.github.io/bookclub-rpkgs/Presentations/Week04/Cohort01/week04.html#1) | [video](https://youtu.be/eMWgu9OQ0m8)
+- Cohort 1 - [Jon Harmon](https://twitter.com/JonTheGeek): [slides](https://r4ds.github.io/bookclub-rpkgs/Presentations/Week04/Cohort01/week04.html#1) | [video](https://youtu.be/eMWgu9OQ0m8) | [{within}](https://github.com/jonthegeek/within)
 
 **5: How do I write functions and document them? (introduction)** Chapters [7 ("R code")](https://r4ds.github.io/bookclub-rpkgs/Companion/r-code.html), [10 ("Object documentation")](https://r4ds.github.io/bookclub-rpkgs/Companion/object-documentation.html), & [13 ("Namespace")](https://r4ds.github.io/bookclub-rpkgs/Companion/namespace.html) 
 
