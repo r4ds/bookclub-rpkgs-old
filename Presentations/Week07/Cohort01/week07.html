@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>R Packages</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="David Edison" />
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# R Packages
+## Testing and Automated Checking
+### David Edison
+
+---
+
+
+
+
+
+
+# Chapter 12: Testing
+
+## Why should we write tests?
+
+- Fewer bugs
+- Better code structure
+- Easier restarts
+- Robust code
+
+---
+
+# Chapter 12: Testing
+
+## Workflow
+
+- testthat package (version 3.0.0 out on CRAN!)
+- `usethis::use_testthat` function sets up most of the structure for you
+- Book recommends testthat (for obvious reasons), but other testing frameworks exist (e.g. tinytest)
+
+---
+
+# Chapter 12: Testing
+
+## Structure
+
+- A test file lives in the `tests/testthat` directory
+- Create a new test with `usethis::use_test` function. It is recommended to use the same name as the corresponding file in the `R` directory (use descriptive filenames -- despite what the book says, `context` is deprecated)
+- An *expectation* is the atom of testing
+- A *test* groups together multiple expectations. Also referred to as a *unit test* since they test one "unit" of functionality
+- A *file* groups together multiple related tests
+
+---
+
+# Chapter 12: Testing
+
+## Expectations
+
+- All expectation functions in testthat have 2 arguments: the actual result, and the expectation
+- If they don't agree, testhat throws an error
+- New to testthat 3.0.0, snapshot tests can be used to visually inspect output
+- Examples:
+```
+expect_equal
+expect_error
+expect_s3_class
+expect_match
+expect_lt
+expect_snapshot_output
+```
+---
+
+# Chapter 12: Testing
+
+## Writing Tests
+
+- Each test should have an informative name and cover a single unit of functionality
+- Focus on testing the external interface to your functions
+- Test each behavior in only one test
+- Avoid testing simple code you're confident will work
+- Always write a test when you discover a bug
+- You can use `skip` function to conditionally skip a test
+- Sometime it's useful to build your own testing tools to reduce duplication
+
+---
+
+# Chapter 12: Testing
+
+## CRAN Notes
+
+- Tests should run in under a minute (you can add a call to `skip_on_cran` before long running tests)
+- Tests are always run in the English Language
+- Be careful about testing things that are likely to be variable on CRAN machines (e.g. testing how long something takes, numerical precision)
+
+---
+
+# Chapter 19: Automated Checking 
+
+## Worflow
+
+- Automated checking automatically checks code for common problems
+- `R CMD check` is termal command or use `devtools::check` (Ctrl/Cmd + Shift + E in RStudio)
+- `R CMD check` returns 3 types of messages
+  - `ERRORS` (severe problems, definitely fix)
+  - `WARNINGS` (likely problems you must fix if submitted to CRAN)
+  - `NOTES` (mild problems, should strive to eliminate in submitting to CRAN)
+  
+---
+
+# Chapter 19: Automated Checking 
+
+## Checks
+
+- Metadata 
+- Package Structure 
+- `DESCRIPTION` file meta-information
+- Package dependencies
+- CRAN feasibility
+- Namespace
+- R code
+- Data
+- Documentation
+- Demos
+- Compiled code
+- Tests
+- Vignettes
+
+---
+
+# Chapter 19: Automated Checking 
+
+## Continuous Integration
+
+- Automatically run `devtools::check` every time code is pushed to github
+- Basic use
+  - `usethis::use_travis`, `usethis::use_circleci`, `usethis::use_appveyor`
+  - Set up a config file
+  - Commit and push to github
+  - Wait a few minutes for results to be emailed
+- You can use CI tooling to do other cool stuff like replublish a book every time source changes or building vignettes and publishing them to a website
+
+---
+
+class: inverse, middle, center
+
+# Demo
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create();
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();</script>
+<style>
+.logo {
+  background-image: url(r4ds.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  width: 110px;
+  height: 128px;
+  z-index: 0;
+}
+</style>
+
+<script>
+document
+  .querySelectorAll(
+    '.remark-slide-content' +
+    ':not(.title-slide)' +
+    // add additional classes to exclude here, e.g.
+    // ':not(.inverse)' +
+    ':not(.hide-logo)'
+  )
+  .forEach(el => {
+    el.innerHTML += '<div class="logo"></div>';
+  });
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
