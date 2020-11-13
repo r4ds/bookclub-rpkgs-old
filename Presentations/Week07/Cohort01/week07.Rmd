@@ -1,0 +1,150 @@
+---
+title: "R Packages"
+subtitle: "Testing and Automated Checking"
+author: "David Edison"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css: xaringan-themer.css
+    includes:
+      after_body: insert-logo.html
+---
+
+```{r libraries, include = FALSE}
+library(xaringanthemer)
+```
+
+```{r xaringan-themer, include = FALSE}
+style_mono_light(
+  base_color = "#3092FF",
+  header_font_google = google_font("Josefin Sans"),
+  text_font_google   = google_font("Montserrat", "300", "300i"),
+  code_font_google   = google_font("Droid Mono"),
+)
+```
+
+# Chapter 12: Testing
+
+## Why should we write tests?
+
+- Fewer bugs
+- Better code structure
+- Easier restarts
+- Robust code
+
+---
+
+# Chapter 12: Testing
+
+## Workflow
+
+- testthat package (version 3.0.0 out on CRAN!)
+- `usethis::use_testthat` function sets up most of the structure for you
+- Book recommends testthat (for obvious reasons), but other testing frameworks exist (e.g. tinytest)
+
+---
+
+# Chapter 12: Testing
+
+## Structure
+
+- A test file lives in the `tests/testthat` directory
+- Create a new test with `usethis::use_test` function. It is recommended to use the same name as the corresponding file in the `R` directory (use descriptive filenames -- despite what the book says, `context` is deprecated)
+- An *expectation* is the atom of testing
+- A *test* groups together multiple expectations. Also referred to as a *unit test* since they test one "unit" of functionality
+- A *file* groups together multiple related tests
+
+---
+
+# Chapter 12: Testing
+
+## Expectations
+
+- All expectation functions in testthat have 2 arguments: the actual result, and the expectation
+- If they don't agree, testhat throws an error
+- New to testthat 3.0.0, snapshot tests can be used to visually inspect output
+- Examples:
+```
+expect_equal
+expect_error
+expect_s3_class
+expect_match
+expect_lt
+expect_snapshot_output
+```
+---
+
+# Chapter 12: Testing
+
+## Writing Tests
+
+- Each test should have an informative name and cover a single unit of functionality
+- Focus on testing the external interface to your functions
+- Test each behavior in only one test
+- Avoid testing simple code you're confident will work
+- Always write a test when you discover a bug
+- You can use `skip` function to conditionally skip a test
+- Sometime it's useful to build your own testing tools to reduce duplication
+
+---
+
+# Chapter 12: Testing
+
+## CRAN Notes
+
+- Tests should run in under a minute (you can add a call to `skip_on_cran` before long running tests)
+- Tests are always run in the English Language
+- Be careful about testing things that are likely to be variable on CRAN machines (e.g. testing how long something takes, numerical precision)
+
+---
+
+# Chapter 19: Automated Checking 
+
+## Worflow
+
+- Automated checking automatically checks code for common problems
+- `R CMD check` is termal command or use `devtools::check` (Ctrl/Cmd + Shift + E in RStudio)
+- `R CMD check` returns 3 types of messages
+  - `ERRORS` (severe problems, definitely fix)
+  - `WARNINGS` (likely problems you must fix if submitted to CRAN)
+  - `NOTES` (mild problems, should strive to eliminate in submitting to CRAN)
+  
+---
+
+# Chapter 19: Automated Checking 
+
+## Checks
+
+- Metadata 
+- Package Structure 
+- `DESCRIPTION` file meta-information
+- Package dependencies
+- CRAN feasibility
+- Namespace
+- R code
+- Data
+- Documentation
+- Demos
+- Compiled code
+- Tests
+- Vignettes
+
+---
+
+# Chapter 19: Automated Checking 
+
+## Continuous Integration
+
+- Automatically run `devtools::check` every time code is pushed to github
+- Basic use
+  - `usethis::use_travis`, `usethis::use_circleci`, `usethis::use_appveyor`
+  - Set up a config file
+  - Commit and push to github
+  - Wait a few minutes for results to be emailed
+- You can use CI tooling to do other cool stuff like replublish a book every time source changes or building vignettes and publishing them to a website
+
+---
+
+class: middle, center
+
+# [Demo](https://github.com/d-edison/testdemo)
