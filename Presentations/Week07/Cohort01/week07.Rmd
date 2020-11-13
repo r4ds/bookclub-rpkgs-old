@@ -145,7 +145,6 @@ expect_snapshot_output
 
 ---
 
-class: inverse, middle, center
+class: middle, center
 
-# Demo
-
+# [Demo](https://github.com/d-edison/testdemo)
