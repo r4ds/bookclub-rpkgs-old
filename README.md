@@ -55,4 +55,4 @@ Don't forget to check out the [Learning Objectives for each week](https://r4ds.g
 
 **7: How do I make sure my package works?** Chapters [12 ("Testing")]() & [19 ("Automated checking")]() 
 
-- Cohort 1 - David Edison: [slides] | [video](https://youtu.be/SHAdJmjvQ44)
+- Cohort 1 - David Edison: [slides](https://r4ds.github.io/bookclub-rpkgs/Presentations/Week07/Cohort01/week07.html#1) | [video](https://youtu.be/SHAdJmjvQ44)
