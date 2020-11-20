@@ -22,9 +22,10 @@ Don't forget to check out the [Learning Objectives for each week](https://r4ds.g
 
 *Cohort 1 - Tuesdays 8pm ET, starting 2020-09-29 - facilitated by Jon Harmon*
 
-- **9: How do I describe my package?** Chapters [8 ("Package metadata")]() & [9 ("Licensing")]()- TBD (2020-11-24)
-- **10: How do I include things like data and do obscure package-y things?** Chapters [14 ("External data")](), [15 ("Compiled code")](), [16 ("Installed files")](), and [17 ("Other components")]() - TBD (2020-12-01)
-- **11: How do I share and promote my package?** Chapter [20 ("Releasing a package")]() & Marketing/pkgdown - TBD (2020-12-08)
+- **9: What am I working on?** - Discussion of current projects! (2020-11-24)
+- **10: How do I describe my package?** Chapters [8 ("Package metadata")]() & [9 ("Licensing")]()- TBD (2020-12-01)
+- **11: How do I include things like data and do obscure package-y things?** Chapters [14 ("External data")](), [15 ("Compiled code")](), [16 ("Installed files")](), and [17 ("Other components")]() - TBD (2020-12-08)
+- **12: How do I share and promote my package?** Chapter [20 ("Releasing a package")]() & Marketing/pkgdown - TBD (2020-12-15)
 
 ### Presentations & Recordings
 
