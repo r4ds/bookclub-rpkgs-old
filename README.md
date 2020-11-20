@@ -55,7 +55,7 @@ Don't forget to check out the [Learning Objectives for each week](https://r4ds.g
 
 - **7: How do I make sure my package works?** Chapters [12 ("Testing")](https://r4ds.github.io/bookclub-rpkgs/Companion/testing.html) & [19 ("Automated checking")](https://r4ds.github.io/bookclub-rpkgs/Companion/automated-checking-wip.html) - David Edison (2020-11-10)
 
-- Cohort 1 - David Eddison: [video](https://youtu.be/SHAdJmjvQ44)
+- Cohort 1 - David Edison: [video](https://youtu.be/SHAdJmjvQ44)
 
 - **8: How do I make sure my package works?** Continuous Integration/GitHub Actions - [Jonathan Sidi](https://twitter.com/yoniceedee) (2020-11-17)
 
