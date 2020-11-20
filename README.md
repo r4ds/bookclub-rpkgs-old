@@ -22,8 +22,6 @@ Don't forget to check out the [Learning Objectives for each week](https://r4ds.g
 
 *Cohort 1 - Tuesdays 8pm ET, starting 2020-09-29 - facilitated by Jon Harmon*
 
-- **7: How do I make sure my package works?** Chapters [12 ("Testing")]() & [19 ("Automated checking")]() - David Edison (2020-11-10)
-- **8: How do I make sure my package works?** Continuous Integration/GitHub Actions - [Jonathan Sidi](https://twitter.com/yoniceedee) (2020-11-17)
 - **9: How do I describe my package?** Chapters [8 ("Package metadata")]() & [9 ("Licensing")]()- TBD (2020-11-24)
 - **10: How do I include things like data and do obscure package-y things?** Chapters [14 ("External data")](), [15 ("Compiled code")](), [16 ("Installed files")](), and [17 ("Other components")]() - TBD (2020-12-01)
 - **11: How do I share and promote my package?** Chapter [20 ("Releasing a package")]() & Marketing/pkgdown - TBD (2020-12-08)
@@ -53,3 +51,11 @@ Don't forget to check out the [Learning Objectives for each week](https://r4ds.g
 **6: How do I write functions and document them? (names)** Continued discussions of chapters 7, 10, and 13
 
 - Cohort 1 - [Jon Harmon](https://twitter.com/JonTheGeek): [video](https://youtu.be/oCbDqT8uIHY)
+
+- **7: How do I make sure my package works?** Chapters [12 ("Testing")](https://r4ds.github.io/bookclub-rpkgs/Companion/testing.html) & [19 ("Automated checking")](https://r4ds.github.io/bookclub-rpkgs/Companion/automated-checking-wip.html) - David Edison (2020-11-10)
+
+- Cohort 1 - David Eddison: [video](https://youtu.be/SHAdJmjvQ44)
+
+- **8: How do I make sure my package works?** Continuous Integration/GitHub Actions - [Jonathan Sidi](https://twitter.com/yoniceedee) (2020-11-17)
+
+- Cohort 1 - Yoni Sidi: [video](https://youtu.be/RlE8P3f10ZU)
