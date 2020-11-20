@@ -53,10 +53,10 @@ Don't forget to check out the [Learning Objectives for each week](https://r4ds.g
 
 - Cohort 1 - [Jon Harmon](https://twitter.com/JonTheGeek): [video](https://youtu.be/oCbDqT8uIHY)
 
-- **7: How do I make sure my package works?** Chapters [12 ("Testing")](https://r4ds.github.io/bookclub-rpkgs/Companion/testing.html) & [19 ("Automated checking")](https://r4ds.github.io/bookclub-rpkgs/Companion/automated-checking-wip.html) - David Edison (2020-11-10)
+- **7: How do I make sure my package works?** Chapters [12 ("Testing")](https://r4ds.github.io/bookclub-rpkgs/Companion/testing.html) & [19 ("Automated checking")](https://r4ds.github.io/bookclub-rpkgs/Companion/automated-checking-wip.html)
 
-- Cohort 1 - David Edison: [video](https://youtu.be/SHAdJmjvQ44)
+- Cohort 1 - David Edison: [slides](https://r4ds.github.io/bookclub-rpkgs/Presentations/Week07/Cohort01/week07.html#1) | [video](https://youtu.be/SHAdJmjvQ44) | [demo package tests](https://github.com/d-edison/testdemo)
 
 - **8: How do I make sure my package works?** Continuous Integration/GitHub Actions - [Jonathan Sidi](https://twitter.com/yoniceedee) (2020-11-17)
 
-- Cohort 1 - Yoni Sidi: [video](https://youtu.be/RlE8P3f10ZU)
+- Cohort 1 - Yoni Sidi: [slides](https://yonicd.github.io/gha_r_tutorial/index.html) | [video](https://youtu.be/RlE8P3f10ZU) | [repo](https://github.com/yonicd/gha_r_tutorial)
