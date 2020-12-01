@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 9 Licensing (WIP) | R Packages Companion</title>
+  <title>Chapter 9 Licensing | R Packages Companion</title>
   <meta name="description" content="This is a companion to R Packages (second edition)." />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 9 Licensing (WIP) | R Packages Companion" />
+  <meta property="og:title" content="Chapter 9 Licensing | R Packages Companion" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="r4ds/bookclub-rpkgs" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 9 Licensing (WIP) | R Packages Companion" />
+  <meta name="twitter:title" content="Chapter 9 Licensing | R Packages Companion" />
   
   <meta name="twitter:description" content="This is a companion to R Packages (second edition)." />
   
@@ -30,7 +30,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="package-metadata-wip.html"/>
+<link rel="prev" href="package-metadata.html"/>
 <link rel="next" href="object-documentation.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -50,6 +50,8 @@
 
 
 <script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 
 
 
@@ -83,8 +85,8 @@
 <li class="chapter" data-level="5" data-path="fundamental-development-workflows.html"><a href="fundamental-development-workflows.html"><i class="fa fa-check"></i><b>5</b> Fundamental development workflows</a></li>
 <li class="chapter" data-level="6" data-path="the-package-within.html"><a href="the-package-within.html"><i class="fa fa-check"></i><b>6</b> The package within</a></li>
 <li class="chapter" data-level="7" data-path="r-code.html"><a href="r-code.html"><i class="fa fa-check"></i><b>7</b> R code</a></li>
-<li class="chapter" data-level="8" data-path="package-metadata-wip.html"><a href="package-metadata-wip.html"><i class="fa fa-check"></i><b>8</b> Package metadata (WIP)</a></li>
-<li class="chapter" data-level="9" data-path="licensing-wip.html"><a href="licensing-wip.html"><i class="fa fa-check"></i><b>9</b> Licensing (WIP)</a></li>
+<li class="chapter" data-level="8" data-path="package-metadata.html"><a href="package-metadata.html"><i class="fa fa-check"></i><b>8</b> Package metadata</a></li>
+<li class="chapter" data-level="9" data-path="licensing.html"><a href="licensing.html"><i class="fa fa-check"></i><b>9</b> Licensing</a></li>
 <li class="chapter" data-level="10" data-path="object-documentation.html"><a href="object-documentation.html"><i class="fa fa-check"></i><b>10</b> Object documentation</a></li>
 <li class="chapter" data-level="11" data-path="vignettes.html"><a href="vignettes.html"><i class="fa fa-check"></i><b>11</b> Vignettes</a></li>
 <li class="chapter" data-level="12" data-path="testing.html"><a href="testing.html"><i class="fa fa-check"></i><b>12</b> Testing</a></li>
@@ -94,7 +96,7 @@
 <li class="chapter" data-level="16" data-path="installed-files-wip.html"><a href="installed-files-wip.html"><i class="fa fa-check"></i><b>16</b> Installed files (WIP)</a></li>
 <li class="chapter" data-level="17" data-path="other-components-wip.html"><a href="other-components-wip.html"><i class="fa fa-check"></i><b>17</b> Other components (WIP)</a></li>
 <li class="chapter" data-level="18" data-path="git-and-github.html"><a href="git-and-github.html"><i class="fa fa-check"></i><b>18</b> Git and GitHub</a></li>
-<li class="chapter" data-level="19" data-path="automated-checking-wip.html"><a href="automated-checking-wip.html"><i class="fa fa-check"></i><b>19</b> Automated checking (WIP)</a></li>
+<li class="chapter" data-level="19" data-path="automated-checking.html"><a href="automated-checking.html"><i class="fa fa-check"></i><b>19</b> Automated checking</a></li>
 <li class="chapter" data-level="20" data-path="releasing-a-package-wip.html"><a href="releasing-a-package-wip.html"><i class="fa fa-check"></i><b>20</b> Releasing a package (WIP)</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -116,12 +118,27 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="licensing-wip" class="section level1">
-<h1><span class="header-section-number">Chapter 9</span> Licensing (WIP)</h1>
+<div id="licensing" class="section level1">
+<h1><span class="header-section-number">Chapter 9</span> Licensing</h1>
 <div class="LO">
 <p><strong>Learning objectives:</strong></p>
 <ul>
-<li>TBD</li>
+<li>Describe the difference between <strong>permissive</strong> licenses and <strong>copyleft</strong> licenses.</li>
+<li>Use <code>usethis::use_*_license()</code> to specify your package’s license.</li>
+<li>Understand who holds the copyright for code written on your own time, for your employer, and for contract work.</li>
+<li>Describe the three ways licenses can be specified in the <code>License</code> field.</li>
+<li>Describe the MIT license.</li>
+<li>Describe the Apache license.</li>
+<li>Describe the LGPL license.</li>
+<li>Describe the GPL licenses.</li>
+<li>Describe the AGPL license.</li>
+<li>Understand the process required to relicense a package.</li>
+<li>Describe the CC0 license.</li>
+<li>Describe the CC-BY license.</li>
+<li>Understand that the copyright of contributed code is usually retained by the author of that code.</li>
+<li>Determine whether the license of bundled code is compatible with your license.</li>
+<li>Credit bundled code in <code>Authors@R</code>.</li>
+<li>Use a <code>LICENSE.note</code> file to disambiguate licensing of bundled code.</li>
 </ul>
 </div>
 
@@ -131,7 +148,7 @@
           </div>
         </div>
       </div>
-<a href="package-metadata-wip.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="package-metadata.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="object-documentation.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
