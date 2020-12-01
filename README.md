@@ -22,7 +22,7 @@ Don't forget to check out the [Learning Objectives for each week](https://r4ds.g
 
 *Cohort 1 - Tuesdays 8pm ET, starting 2020-09-29 - facilitated by Jon Harmon*
 
-- **10: How do I describe my package?** Chapters [8 ("Package metadata")]() & [9 ("Licensing")]()- TBD (2020-12-01)
+- **10: How do I describe my package?** Chapters [8 ("Package metadata")](https://r4ds.github.io/bookclub-rpkgs/Companion/package-metadata.html) & [9 ("Licensing")](https://r4ds.github.io/bookclub-rpkgs/Companion/licensing.html) - Tony (2020-12-01)
 - **11: How do I include things like data and do obscure package-y things?** Chapters [14 ("External data")](), [15 ("Compiled code")](), [16 ("Installed files")](), and [17 ("Other components")]() - TBD (2020-12-08)
 - **12: How do I share and promote my package?** Chapter [20 ("Releasing a package")]() & Marketing/pkgdown - TBD (2020-12-15)
 
@@ -52,7 +52,7 @@ Don't forget to check out the [Learning Objectives for each week](https://r4ds.g
 
 - Cohort 1 - [Jon Harmon](https://twitter.com/JonTheGeek): [video](https://youtu.be/oCbDqT8uIHY)
 
-**7: How do I make sure my package works?** Chapters [12 ("Testing")](https://r4ds.github.io/bookclub-rpkgs/Companion/testing.html) & [19 ("Automated checking")](https://r4ds.github.io/bookclub-rpkgs/Companion/automated-checking-wip.html)
+**7: How do I make sure my package works?** Chapters [12 ("Testing")](https://r4ds.github.io/bookclub-rpkgs/Companion/testing.html) & [19 ("Automated checking")](https://r4ds.github.io/bookclub-rpkgs/Companion/automated-checking.html)
 
 - Cohort 1 - David Edison: [slides](https://r4ds.github.io/bookclub-rpkgs/Presentations/Week07/Cohort01/week07.html#1) | [video](https://youtu.be/SHAdJmjvQ44) | [demo package tests](https://github.com/d-edison/testdemo)
 
