@@ -65,4 +65,4 @@ Don't forget to check out the [Learning Objectives for each week](https://r4ds.g
 
 **10: How do I describe my package?** Chapters [8 ("Package metadata")](https://r4ds.github.io/bookclub-rpkgs/Companion/package-metadata.html) & [9 ("Licensing")](https://r4ds.github.io/bookclub-rpkgs/Companion/licensing.html)
 
-- Cohort 1 - [Tony ElHabr](https://twitter.com/TonyElHabr): [slides](https://r4ds.github.io/bookclub-rpkgs/Presentations/Week10/Cohort01/week10html#1) | VIDEO
+- Cohort 1 - [Tony ElHabr](https://twitter.com/TonyElHabr): [slides](https://r4ds.github.io/bookclub-rpkgs/Presentations/Week10/Cohort01/week10html#1) | [video](https://youtu.be/C_H1oQZD7m8)
