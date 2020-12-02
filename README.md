@@ -22,9 +22,8 @@ Don't forget to check out the [Learning Objectives for each week](https://r4ds.g
 
 *Cohort 1 - Tuesdays 8pm ET, starting 2020-09-29 - facilitated by Jon Harmon*
 
-- **10: How do I describe my package?** Chapters [8 ("Package metadata")](https://r4ds.github.io/bookclub-rpkgs/Companion/package-metadata.html) & [9 ("Licensing")](https://r4ds.github.io/bookclub-rpkgs/Companion/licensing.html) - Tony (2020-12-01)
-- **11: How do I include things like data and do obscure package-y things?** Chapters [14 ("External data")](), [15 ("Compiled code")](), [16 ("Installed files")](), and [17 ("Other components")]() - TBD (2020-12-08)
-- **12: How do I share and promote my package?** Chapter [20 ("Releasing a package")]() & Marketing/pkgdown - TBD (2020-12-15)
+- **11: How do I include things like data and do obscure package-y things?** Chapters [14 ("External data")](), [15 ("Compiled code")](), [16 ("Installed files")](), and [17 ("Other components")]() - Jon? (2020-12-08)
+- **12: How do I share and promote my package?** Chapter [20 ("Releasing a package")]() & Marketing/pkgdown - Asmae Toumi (2020-12-15)
 
 ### Presentations & Recordings
 
@@ -63,3 +62,7 @@ Don't forget to check out the [Learning Objectives for each week](https://r4ds.g
 **9: What am I working on?** Discussions of member projects
 
 - Cohort 1 - [video](https://youtu.be/Dh-kbknqa3E)
+
+**10: How do I describe my package?** Chapters [8 ("Package metadata")](https://r4ds.github.io/bookclub-rpkgs/Companion/package-metadata.html) & [9 ("Licensing")](https://r4ds.github.io/bookclub-rpkgs/Companion/licensing.html) 
+
+- Cohort 1 - [Tony El Habr](https://twitter.com/tonyelhabr): SLIDES | VIDEO
