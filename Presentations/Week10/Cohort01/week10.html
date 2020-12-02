@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>R Packages</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Tony ElHabr" />
+    <script src="libs/header-attrs-2.3/header-attrs.js"></script>
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# R Packages
+## Package Metadata and Licenses
+### Tony ElHabr
+
+---
+
+
+
+
+
+
+# `DESCRIPTION`
+
+- Every package must include a `DESCRIPTION` file (written using Debian control format (DCF)).
+
+- Use `usethis::create_package("badpkg")` to create a package.
+
+```
+Package: badpkg
+Title: What the Package Does (One Line, Title Case)
+Version: 0.0.0.9000
+Authors@R (parsed):
+    * First Last &lt;first.last@example.com&gt; [aut, cre] (YOUR-ORCID-ID)
+Description: What the package does (one paragraph).
+License: `use_mit_license()`, `use_gpl3_license()` or friends to
+    pick a license
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
+```
+
+---
+
+# `DESCRIPTION`
+
+- Use `usethis::create_package("badpkg")` with [`usethis.*` options set](https://usethis.r-lib.org/articles/articles/usethis-setup.html#store-default-values-for-description-fields-and-other-preferences-1).
+
+```
+Title: R package for {{...}}.
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Tony",
+           family = "ElHabr",
+           role = c("aut", "cre"),
+           email = "me@gmail.com")
+Description: An R package for {{...}}.
+License: MIT + file LICENSE
+```
+
+global `.Rprofile`
+
+```
+usethis.description = list(
+  Title = 'R package for {{...}}.',
+  Description = 'An R package for {{...}}.',
+  `Authors@R` = 'person("Tony", "ElHabr", email = "me@gmail.com", 
+    role = c("aut", "cre")
+  )',
+  License = 'MIT + file LICENSE',
+  Version = '0.0.0.9000'
+)
+```
+
+---
+
+# `Title` and `Description`
+
+- `Title`: one-liner
+- `Description`: more detailed
+
+```
+Package: badpkg
+Title: R package full of bad practices.
+Description: An R package to exemplify how one can be a bad dev yet still learn
+    how to write an R package.
+```
+
+&gt;    *"There are only two hard things in Computer Science: cache invalidation and naming things.* -- Phil Karlton
+
+---
+
+# `Author@R`
+
+- Should include name, email address, and role for each author.
+
+```
+Authors@R: c(
+    person("Hadley", "Wickham", email = "hadley@rstudio.com", role = "cre"),
+    person("Winston", "Chang", email = "winston@rstudio.com", role = "aut")
+)
+```
+
+- Most common roles
+  - `cre`: creator or maintainer
+  - `aut`: authors
+  - `ctb`: contributors
+  - `cph`: copyright holder
+  
+&lt;img src="img/tools-xkcd.png" width="60%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# `URL` and `BugReports`
+
+- `URL` and `BugReports` list other resources available for help.
+  - `BugReports` is often the issues page in the GitHub package repo.
+  - Most commonly, `URL` points to the GitHub repo or a `{pkgdown}` site.
+
+&lt;img src="img/fixing_problems-xkcd.png" width="40%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# `Version`
+
+- Released packages: `&lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;`
+  - e.g. 1.2.3 = Major version 1, minor version 2, patch 3
+- In-development packages: `0.0.0.9000`
+- Use `usethis::use_version()` to increment version.
+
+&lt;img src="img/software_updates-xkcd.png" width="50%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Dependencies
+
+- `Imports`
+  - Lists packages that must be present for your package to work.
+  - Packages will be installed if not already installed.
+  - Best practice is to namespace functions (i.e. `package::function()`) internally, although not strictly necessary.
+- `Suggests`
+  - Lists packages that are used, but not required (i.e. for tests and vignettes).
+  - Packages will not be installed if not already installed.
+  - Best practice is to use `requireNamespace()`.
+  
+- Use `usethis::use_package()` to add packages to `Imports` and `Suggests`.
+
+---
+
+# Dependencies
+
+- Best practice is to specify minimum versions of packages and R.
+
+```
+Depends: 
+    R (&gt;= 3.4.0)
+Imports:
+    ggplot2 (&gt;= 3.0.0),
+    dplyr (&gt;= 1.0.0)
+Suggests:
+    testthat (&gt;= 3.0.0)
+```
+
+- `LinkingTo`, `Enhances`, and `SystemRequirements` exist for specific reasons.
+
+---
+
+# `License`
+
+- 2 broad categories:
+  - Permissive
+      - ~15% of R CRAN packages per Hadley, and ~55% of GitHub packages found [by a 2015 survey](https://github.blog/2015-03-09-open-source-license-usage-on-github-com/).
+  - Copyleft
+      - ~70% of R CRAN packages, but only ~20% of GitHub packages.
+- 3 recommended licenses for R devs: (1) `MIT`, (2)`GPL-2` or `GPL-3`, (3) `CC0`
+- Important if planning to release your package.
+- Required for CRAN.
+- 3 locations where license is recorded:
+  - `License` field in `DESCRIPTION` file
+      - e.g. `GPL (&gt;= 2)`, `GPL-2`, `MIT + file`, `file LICENSE`
+  - `LICENSE` file
+  - `LICENSE.md` file (copy of the full text of the license)
+      - Should not go on CRAN.
+- If using external code, ensure compliance with other code's license
+  - `LICENSE.note` may be appropriate.
+- Easy to create with `usethis::use_*_license()`.
+
+---
+
+# Licenses
+
+Licenses, from most to least permissive:
+
+- `MIT`
+  - Simple and permissive.
+  - Others can freely use your code as long as they distribute the same license with their code.
+  - Actually a "template" that points to another file, hence `MIT + file`
+- `Apache`
+  - Similar to the MIT license but it also includes an explicit patent grant.
+- GNU Lesser General Public License (`LGPL`)
+  - Mostly like `GPL`.
+- GNU General Public License (`GPL-2` and `GPL-3`)
+  - Stricter than `MIT`.
+  - Those who use your code and distribute it must also make the source available.
+  - `GPL-3` covers up for some "loopholes" in `GPL-2`.
+- Affero General Public License (`AGPL`)
+  - Defines "distribution" more strictly, such that it includes providing a service over a network.
+
+---
+
+# Licenses for data packages
+
+Licenses for data packages, from most to least permissive:
+
+- Creative Commons (`CC0`):
+  - Most appropriate for data packages.
+- `CC-BY`:
+  - Like `CC0`, but author must be credited.
+
+&lt;img src="img/colombus.jpg" width="50%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Other licensing things
+
+- Re-licensing
+  - Must check with all contributors!
+- Copyright holder
+- Code given to you
+  - Implicitly agreeing to your license.
+  - Best practice is to acknowledge contributors somewhere.
+- Common cases when bundling external code:
+  1. Do nothing if (1) your license is same as external or if (2) external license is MIT or BSD.
+  3. If external license is more restrictive, (1) make your license more restrictive, (2) find external code that uses a more permissive license, or (3) put the external code in a separate package.
+
+&lt;img src="img/floss-licensing.png" width="600" height="200" style="display: block; margin: auto;" /&gt;
+
+---
+
+#  Interesting licensing stories
+
+- [Would `{arrow}` have been developed if `{dplyr}` had not been converted from GPLv2 to MIT?](https://twitter.com/wesmckinn/status/393122387610198016?s=20)
+
+- [Tesla struggled to comply with GPL for Linux kernel.](https://sfconservancy.org/blog/2018/may/18/tesla-incomplete-ccs/)
+
+- [The process of re-licensing `{ggplot2}`.](https://github.com/tidyverse/ggplot2/issues/4236)
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create();
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();</script>
+<style>
+.logo {
+  background-image: url(r4ds.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  width: 110px;
+  height: 128px;
+  z-index: 0;
+}
+</style>
+
+<script>
+document
+  .querySelectorAll(
+    '.remark-slide-content' +
+    ':not(.title-slide)' +
+    // add additional classes to exclude here, e.g.
+    // ':not(.inverse)' +
+    ':not(.hide-logo)'
+  )
+  .forEach(el => {
+    el.innerHTML += '<div class="logo"></div>';
+  });
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

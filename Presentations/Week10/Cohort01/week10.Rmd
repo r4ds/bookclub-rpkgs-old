@@ -1,0 +1,261 @@
+---
+title: "R Packages"
+subtitle: "Package Metadata and Licenses"
+author: "Tony ElHabr"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css: xaringan-themer.css
+    includes:
+      after_body: insert-logo.html
+---
+
+```{r libraries, include = FALSE}
+library(xaringanthemer)
+```
+
+```{r xaringan-themer, include = FALSE}
+style_mono_light(
+  base_color = "#3092FF",
+  header_font_google = google_font("Josefin Sans"),
+  text_font_google   = google_font("Montserrat", "300", "300i"),
+  code_font_google   = google_font("Droid Mono"),
+)
+```
+
+# `DESCRIPTION`
+
+- Every package must include a `DESCRIPTION` file (written using Debian control format (DCF)).
+
+- Use `usethis::create_package("badpkg")` to create a package.
+
+```
+Package: badpkg
+Title: What the Package Does (One Line, Title Case)
+Version: 0.0.0.9000
+Authors@R (parsed):
+    * First Last <first.last@example.com> [aut, cre] (YOUR-ORCID-ID)
+Description: What the package does (one paragraph).
+License: `use_mit_license()`, `use_gpl3_license()` or friends to
+    pick a license
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
+```
+
+---
+
+# `DESCRIPTION`
+
+- Use `usethis::create_package("badpkg")` with [`usethis.*` options set](https://usethis.r-lib.org/articles/articles/usethis-setup.html#store-default-values-for-description-fields-and-other-preferences-1).
+
+```
+Title: R package for {{...}}.
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Tony",
+           family = "ElHabr",
+           role = c("aut", "cre"),
+           email = "me@gmail.com")
+Description: An R package for {{...}}.
+License: MIT + file LICENSE
+```
+
+global `.Rprofile`
+
+```
+usethis.description = list(
+  Title = 'R package for {{...}}.',
+  Description = 'An R package for {{...}}.',
+  `Authors@R` = 'person("Tony", "ElHabr", email = "me@gmail.com", 
+    role = c("aut", "cre")
+  )',
+  License = 'MIT + file LICENSE',
+  Version = '0.0.0.9000'
+)
+```
+
+---
+
+# `Title` and `Description`
+
+- `Title`: one-liner
+- `Description`: more detailed
+
+```
+Package: badpkg
+Title: R package full of bad practices.
+Description: An R package to exemplify how one can be a bad dev yet still learn
+    how to write an R package.
+```
+
+>    *"There are only two hard things in Computer Science: cache invalidation and naming things.* -- Phil Karlton
+
+---
+
+# `Author@R`
+
+- Should include name, email address, and role for each author.
+
+```
+Authors@R: c(
+    person("Hadley", "Wickham", email = "hadley@rstudio.com", role = "cre"),
+    person("Winston", "Chang", email = "winston@rstudio.com", role = "aut")
+)
+```
+
+- Most common roles
+  - `cre`: creator or maintainer
+  - `aut`: authors
+  - `ctb`: contributors
+  - `cph`: copyright holder
+  
+```{r echo=F, include=T, eval=T, out.width='60%', fig.align='center'}
+knitr::include_graphics('img/tools-xkcd.png')
+```
+
+---
+
+# `URL` and `BugReports`
+
+- `URL` and `BugReports` list other resources available for help.
+  - `BugReports` is often the issues page in the GitHub package repo.
+  - Most commonly, `URL` points to the GitHub repo or a `{pkgdown}` site.
+
+```{r echo=F, include=T, eval=T, out.width='40%', fig.align='center'}
+knitr::include_graphics('img/fixing_problems-xkcd.png')
+```
+
+---
+
+# `Version`
+
+- Released packages: `<major>.<minor>.<patch>`
+  - e.g. 1.2.3 = Major version 1, minor version 2, patch 3
+- In-development packages: `0.0.0.9000`
+- Use `usethis::use_version()` to increment version.
+
+```{r echo=F, include=T, eval=T, out.width='50%', fig.align='center'}
+knitr::include_graphics('img/software_updates-xkcd.png')
+```
+
+---
+
+# Dependencies
+
+- `Imports`
+  - Lists packages that must be present for your package to work.
+  - Packages will be installed if not already installed.
+  - Best practice is to namespace functions (i.e. `package::function()`) internally, although not strictly necessary.
+- `Suggests`
+  - Lists packages that are used, but not required (i.e. for tests and vignettes).
+  - Packages will not be installed if not already installed.
+  - Best practice is to use `requireNamespace()`.
+  
+- Use `usethis::use_package()` to add packages to `Imports` and `Suggests`.
+
+---
+
+# Dependencies
+
+- Best practice is to specify minimum versions of packages and R.
+
+```
+Depends: 
+    R (>= 3.4.0)
+Imports:
+    ggplot2 (>= 3.0.0),
+    dplyr (>= 1.0.0)
+Suggests:
+    testthat (>= 3.0.0)
+```
+
+- `LinkingTo`, `Enhances`, and `SystemRequirements` exist for specific reasons.
+
+---
+
+# `License`
+
+- 2 broad categories:
+  - Permissive
+      - ~15% of R CRAN packages per Hadley, and ~55% of GitHub packages found [by a 2015 survey](https://github.blog/2015-03-09-open-source-license-usage-on-github-com/).
+  - Copyleft
+      - ~70% of R CRAN packages, but only ~20% of GitHub packages.
+- 3 recommended licenses for R devs: (1) `MIT`, (2)`GPL-2` or `GPL-3`, (3) `CC0`
+- Important if planning to release your package.
+- Required for CRAN.
+- 3 locations where license is recorded:
+  - `License` field in `DESCRIPTION` file
+      - e.g. `GPL (>= 2)`, `GPL-2`, `MIT + file`, `file LICENSE`
+  - `LICENSE` file
+  - `LICENSE.md` file (copy of the full text of the license)
+      - Should not go on CRAN.
+- If using external code, ensure compliance with other code's license
+  - `LICENSE.note` may be appropriate.
+- Easy to create with `usethis::use_*_license()`.
+
+---
+
+# Licenses
+
+Licenses, from most to least permissive:
+
+- `MIT`
+  - Simple and permissive.
+  - Others can freely use your code as long as they distribute the same license with their code.
+  - Actually a "template" that points to another file, hence `MIT + file`
+- `Apache`
+  - Similar to the MIT license but it also includes an explicit patent grant.
+- GNU Lesser General Public License (`LGPL`)
+  - Mostly like `GPL`.
+- GNU General Public License (`GPL-2` and `GPL-3`)
+  - Stricter than `MIT`.
+  - Those who use your code and distribute it must also make the source available.
+  - `GPL-3` covers up for some "loopholes" in `GPL-2`.
+- Affero General Public License (`AGPL`)
+  - Defines "distribution" more strictly, such that it includes providing a service over a network.
+
+---
+
+# Licenses for data packages
+
+Licenses for data packages, from most to least permissive:
+
+- Creative Commons (`CC0`):
+  - Most appropriate for data packages.
+- `CC-BY`:
+  - Like `CC0`, but author must be credited.
+
+```{r echo=F, include=T, eval=T, out.width='50%', fig.align='center'}
+knitr::include_graphics('img/colombus.jpg')
+```
+
+---
+
+# Other licensing things
+
+- Re-licensing
+  - Must check with all contributors!
+- Copyright holder
+- Code given to you
+  - Implicitly agreeing to your license.
+  - Best practice is to acknowledge contributors somewhere.
+- Common cases when bundling external code:
+  1. Do nothing if (1) your license is same as external or if (2) external license is MIT or BSD.
+  3. If external license is more restrictive, (1) make your license more restrictive, (2) find external code that uses a more permissive license, or (3) put the external code in a separate package.
+
+```{r echo=F, include=T, eval=T, out.width='600', out.height='200', fig.align='center'}
+knitr::include_graphics('img/floss-licensing.png')
+```
+
+---
+
+#  Interesting licensing stories
+
+- [Would `{arrow}` have been developed if `{dplyr}` had not been converted from GPLv2 to MIT?](https://twitter.com/wesmckinn/status/393122387610198016?s=20)
+
+- [Tesla struggled to comply with GPL for Linux kernel.](https://sfconservancy.org/blog/2018/may/18/tesla-incomplete-ccs/)
+
+- [The process of re-licensing `{ggplot2}`.](https://github.com/tidyverse/ggplot2/issues/4236)
+
