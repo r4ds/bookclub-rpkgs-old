@@ -7,8 +7,8 @@ package-structure-and-state
 fundamental-development-workflows
 the-package-within
 r-code
-package-metadata-wip
-licensing-wip
+package-metadata
+licensing
 object-documentation
 vignettes
 testing
@@ -18,5 +18,5 @@ compiled-code-wip
 installed-files-wip
 other-components-wip
 git-and-github
-automated-checking-wip
+automated-checking
 releasing-a-package-wip
