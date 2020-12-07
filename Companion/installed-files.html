@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 20 Releasing a package (WIP) | R Packages Companion</title>
+  <title>Chapter 16 Installed files | R Packages Companion</title>
   <meta name="description" content="This is a companion to R Packages (second edition)." />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 20 Releasing a package (WIP) | R Packages Companion" />
+  <meta property="og:title" content="Chapter 16 Installed files | R Packages Companion" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="r4ds/bookclub-rpkgs" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 20 Releasing a package (WIP) | R Packages Companion" />
+  <meta name="twitter:title" content="Chapter 16 Installed files | R Packages Companion" />
   
   <meta name="twitter:description" content="This is a companion to R Packages (second edition)." />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="automated-checking.html"/>
-
+<link rel="prev" href="compiled-code.html"/>
+<link rel="next" href="other-components.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -91,13 +91,13 @@
 <li class="chapter" data-level="11" data-path="vignettes.html"><a href="vignettes.html"><i class="fa fa-check"></i><b>11</b> Vignettes</a></li>
 <li class="chapter" data-level="12" data-path="testing.html"><a href="testing.html"><i class="fa fa-check"></i><b>12</b> Testing</a></li>
 <li class="chapter" data-level="13" data-path="namespace.html"><a href="namespace.html"><i class="fa fa-check"></i><b>13</b> Namespace</a></li>
-<li class="chapter" data-level="14" data-path="external-data-wip.html"><a href="external-data-wip.html"><i class="fa fa-check"></i><b>14</b> External data (WIP)</a></li>
-<li class="chapter" data-level="15" data-path="compiled-code-wip.html"><a href="compiled-code-wip.html"><i class="fa fa-check"></i><b>15</b> Compiled code (WIP)</a></li>
-<li class="chapter" data-level="16" data-path="installed-files-wip.html"><a href="installed-files-wip.html"><i class="fa fa-check"></i><b>16</b> Installed files (WIP)</a></li>
-<li class="chapter" data-level="17" data-path="other-components-wip.html"><a href="other-components-wip.html"><i class="fa fa-check"></i><b>17</b> Other components (WIP)</a></li>
+<li class="chapter" data-level="14" data-path="external-data.html"><a href="external-data.html"><i class="fa fa-check"></i><b>14</b> External data</a></li>
+<li class="chapter" data-level="15" data-path="compiled-code.html"><a href="compiled-code.html"><i class="fa fa-check"></i><b>15</b> Compiled code</a></li>
+<li class="chapter" data-level="16" data-path="installed-files.html"><a href="installed-files.html"><i class="fa fa-check"></i><b>16</b> Installed files</a></li>
+<li class="chapter" data-level="17" data-path="other-components.html"><a href="other-components.html"><i class="fa fa-check"></i><b>17</b> Other components</a></li>
 <li class="chapter" data-level="18" data-path="git-and-github.html"><a href="git-and-github.html"><i class="fa fa-check"></i><b>18</b> Git and GitHub</a></li>
 <li class="chapter" data-level="19" data-path="automated-checking.html"><a href="automated-checking.html"><i class="fa fa-check"></i><b>19</b> Automated checking</a></li>
-<li class="chapter" data-level="20" data-path="releasing-a-package-wip.html"><a href="releasing-a-package-wip.html"><i class="fa fa-check"></i><b>20</b> Releasing a package (WIP)</a></li>
+<li class="chapter" data-level="20" data-path="releasing-a-package.html"><a href="releasing-a-package.html"><i class="fa fa-check"></i><b>20</b> Releasing a package</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -118,12 +118,15 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="releasing-a-package-wip" class="section level1">
-<h1><span class="header-section-number">Chapter 20</span> Releasing a package (WIP)</h1>
+<div id="installed-files" class="section level1">
+<h1><span class="header-section-number">Chapter 16</span> Installed files</h1>
 <div class="LO">
 <p><strong>Learning objectives:</strong></p>
 <ul>
-<li>TBD</li>
+<li>Use <code>system.file()</code> to load a file included in <code>inst</code>.</li>
+<li>Use <code>citation()</code> to find citation information for R and R packages.</li>
+<li>Use <code>usethis::use_citation()</code> to customize the citation for your package.</li>
+<li>Recognize how to include scripts from other programming languages.</li>
 </ul>
 </div>
 
@@ -133,8 +136,8 @@
           </div>
         </div>
       </div>
-<a href="automated-checking.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="compiled-code.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="other-components.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -165,7 +168,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/r4ds/bookclub-rpkgs/edit/main/20-releasing_a_package.Rmd",
+"link": "https://github.com/r4ds/bookclub-rpkgs/edit/main/16-installed_files.Rmd",
 "text": "Edit"
 },
 "history": {
