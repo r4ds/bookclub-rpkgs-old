@@ -1,7 +1,7 @@
-# Other components (WIP)
+# Other components
 
 :::LO
 **Learning objectives:**
 
-* TBD
+* Recognize that there are other optional components in packages, stored in `demo`, `exec`, `po`, and `tools`.
 :::

@@ -13,10 +13,10 @@ object-documentation
 vignettes
 testing
 namespace
-external-data-wip
-compiled-code-wip
-installed-files-wip
-other-components-wip
+external-data
+compiled-code
+installed-files
+other-components
 git-and-github
 automated-checking
-releasing-a-package-wip
+releasing-a-package

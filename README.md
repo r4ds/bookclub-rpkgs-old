@@ -22,8 +22,8 @@ Don't forget to check out the [Learning Objectives for each week](https://r4ds.g
 
 *Cohort 1 - Tuesdays 8pm ET, starting 2020-09-29 - facilitated by Jon Harmon*
 
-- **11: How do I include things like data and do obscure package-y things?** Chapters [14 ("External data")](), [15 ("Compiled code")](), [16 ("Installed files")](), and [17 ("Other components")]() - Jon? (2020-12-08)
-- **12: How do I share and promote my package?** Chapter [20 ("Releasing a package")]() & Marketing/pkgdown - Asmae Toumi (2020-12-15)
+- **11: How do I include things like data and do obscure package-y things?** Chapters [14 ("External data")](https://r4ds.github.io/bookclub-rpkgs/Companion/external-data.html), [15 ("Compiled code")](https://r4ds.github.io/bookclub-rpkgs/Companion/compiled-code.html), [16 ("Installed files")](https://r4ds.github.io/bookclub-rpkgs/Companion/installed-files.html), and [17 ("Other components")](https://r4ds.github.io/bookclub-rpkgs/Companion/other-components.html) - Jon Harmon (2020-12-08)
+- **12: How do I share and promote my package?** Chapter [20 ("Releasing a package")](https://r4ds.github.io/bookclub-rpkgs/Companion/releasing-a0package.html) & Marketing/pkgdown - Asmae Toumi (2020-12-15)
 
 ### Presentations & Recordings
 
