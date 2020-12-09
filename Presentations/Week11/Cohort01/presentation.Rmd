@@ -1,0 +1,73 @@
+---
+title: "R Packages"
+subtitle: "How do I include things like data and do obscure package-y things?"
+author: "Jon Harmon"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css: xaringan-themer.css
+    includes:
+      after_body: insert-logo.html
+---
+
+```{r libraries, include = FALSE}
+library(xaringanthemer)
+```
+
+```{r xaringan-themer, include = FALSE}
+style_mono_light(
+  base_color = "#3092FF",
+  header_font_google = google_font("Josefin Sans"),
+  text_font_google   = google_font("Montserrat", "300", "300i"),
+  code_font_google   = google_font("Droid Mono"),
+)
+```
+
+# Chapter 14 learning objectives
+
+* List the three main ways to include data in a package.
+ * Exported data: `data/`
+ * Internal data: `R/sysdata.rda`
+ * Raw data (for export): `inst/extdata`
+* Define `LazyData`.
+ * Data isn't loaded until used.
+* Use `usethis::use_data_raw()` to document how a dataset was created.
+* Use `usethis::use_data()` to add data to a package.
+* Use roxygen2 to document a dataset in a package.
+* Use `@format` to  provide a data dictionary for a dataset.
+* Use `@source` to provide details of where you got the data.
+* Use `usethis::use_data(..., internal = TRUE)` to add internal data to a package.
+* Provide raw data to a package user in the `inst/extdata` folder.
+* Load raw data with `system.file`.
+* Note where data for tests should be saved.
+* Note the options for data in vignettes.
+* Use `tools::checkRdaFiles()` and `tools::resaveRdaFiles()` to optimize compression for package data.
+
+---
+
+# Chapter 15 learning objectives
+
+* Use `usethis::use_rcpp()` or `usethis::use_cpp11` to set up a package for C++.
+* Understand the workflow for working with C++ in R.
+* Understand how to document `Rcpp` code.
+* Understand how to export C++ code so that it can be called by other C++ code.
+* Understand how to import C++ code from another package.
+* Note the best practices for C++ code in packages.
+* Remember that this book has more information about working with C code.
+* Recognize workflows for debugging compiled code.
+* Remember that this book has more information about working with Makefiles.
+* Recall that compiled code must work on Linux, Mac, and Windows, so it must be checked carefully before submitting to CRAN. 
+
+We also mentioned [Efficient R Programming](https://csgillespie.github.io/efficientR/index.html)
+
+---
+
+# Chapter 16-17 learning objectives
+
+* Use `system.file()` to load a file included in `inst`.
+* Use `citation()` to find citation information for R and R packages.
+* Use `usethis::use_citation()` to customize the citation for your package.
+* Recognize how to include scripts from other programming languages.
+* Recognize that there are other optional components in packages, stored in `demo`, `exec`, `po`, and `tools`.
+ * The [lubridate](https://github.com/tidyverse/lubridate) package has translations in `po`!
+ * `po` stands for "portable object".
