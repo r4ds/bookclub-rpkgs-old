@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>R Packages</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Jon Harmon" />
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# R Packages
+## How do I include things like data and do obscure package-y things?
+### Jon Harmon
+
+---
+
+
+
+
+
+
+# Chapter 14 learning objectives
+
+* List the three main ways to include data in a package.
+ * Exported data: `data/`
+ * Internal data: `R/sysdata.rda`
+ * Raw data (for export): `inst/extdata`
+* Define `LazyData`.
+ * Data isn't loaded until used.
+* Use `usethis::use_data_raw()` to document how a dataset was created.
+* Use `usethis::use_data()` to add data to a package.
+* Use roxygen2 to document a dataset in a package.
+* Use `@format` to  provide a data dictionary for a dataset.
+* Use `@source` to provide details of where you got the data.
+* Use `usethis::use_data(..., internal = TRUE)` to add internal data to a package.
+* Provide raw data to a package user in the `inst/extdata` folder.
+* Load raw data with `system.file`.
+* Note where data for tests should be saved.
+* Note the options for data in vignettes.
+* Use `tools::checkRdaFiles()` and `tools::resaveRdaFiles()` to optimize compression for package data.
+
+---
+
+# Chapter 15 learning objectives
+
+* Use `usethis::use_rcpp()` or `usethis::use_cpp11` to set up a package for C++.
+* Understand the workflow for working with C++ in R.
+* Understand how to document `Rcpp` code.
+* Understand how to export C++ code so that it can be called by other C++ code.
+* Understand how to import C++ code from another package.
+* Note the best practices for C++ code in packages.
+* Remember that this book has more information about working with C code.
+* Recognize workflows for debugging compiled code.
+* Remember that this book has more information about working with Makefiles.
+* Recall that compiled code must work on Linux, Mac, and Windows, so it must be checked carefully before submitting to CRAN. 
+
+We also mentioned [Efficient R Programming](https://csgillespie.github.io/efficientR/index.html)
+
+---
+
+# Chapter 16-17 learning objectives
+
+* Use `system.file()` to load a file included in `inst`.
+* Use `citation()` to find citation information for R and R packages.
+* Use `usethis::use_citation()` to customize the citation for your package.
+* Recognize how to include scripts from other programming languages.
+* Recognize that there are other optional components in packages, stored in `demo`, `exec`, `po`, and `tools`.
+ * The [lubridate](https://github.com/tidyverse/lubridate) package has translations in `po`!
+ * `po` stands for "portable object".
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create();
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();</script>
+<style>
+.logo {
+  background-image: url(r4ds.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  width: 110px;
+  height: 128px;
+  z-index: 0;
+}
+</style>
+
+<script>
+document
+  .querySelectorAll(
+    '.remark-slide-content' +
+    ':not(.title-slide)' +
+    // add additional classes to exclude here, e.g.
+    // ':not(.inverse)' +
+    ':not(.hide-logo)'
+  )
+  .forEach(el => {
+    el.innerHTML += '<div class="logo"></div>';
+  });
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
