@@ -7,7 +7,7 @@ Visit the [#bookclub-r_packages channel](http://r4ds.io/join) on Slack to join t
 This repo contains 2 main folders:
 
 - Presentations: each week a presenter will give a talk summarizing the chapter(s) and/or discussing practical applications of the topic at hand. 
-- Companion: A (WIP) [Bookdown site](https://r4ds.github.io/bookclub-rpkgs/Companion/introduction.html) outlining **learning objectives** and **collecting questions and answers** on the chapters that come up during meetings (or between!)
+- Companion: A [Bookdown site](https://r4ds.github.io/bookclub-rpkgs/Companion/introduction.html) outlining **learning objectives** and **collecting questions and answers** on the chapters that come up during meetings (or between!)
 
 Other useful links:
 
@@ -22,8 +22,7 @@ Don't forget to check out the [Learning Objectives for each week](https://r4ds.g
 
 *Cohort 1 - Tuesdays 8pm ET, starting 2020-09-29 - facilitated by Jon Harmon*
 
-- **11: How do I include things like data and do obscure package-y things?** Chapters [14 ("External data")](https://r4ds.github.io/bookclub-rpkgs/Companion/external-data.html), [15 ("Compiled code")](https://r4ds.github.io/bookclub-rpkgs/Companion/compiled-code.html), [16 ("Installed files")](https://r4ds.github.io/bookclub-rpkgs/Companion/installed-files.html), and [17 ("Other components")](https://r4ds.github.io/bookclub-rpkgs/Companion/other-components.html) - Jon Harmon (2020-12-08)
-- **12: How do I share and promote my package?** Chapter [20 ("Releasing a package")](https://r4ds.github.io/bookclub-rpkgs/Companion/releasing-a0package.html) & Marketing/pkgdown - Asmae Toumi (2020-12-15)
+- **13: What did I learn in the R Packages Book Club?** - Everyone (2020-12-22)
 
 ### Presentations & Recordings
 
@@ -66,3 +65,11 @@ Don't forget to check out the [Learning Objectives for each week](https://r4ds.g
 **10: How do I describe my package?** Chapters [8 ("Package metadata")](https://r4ds.github.io/bookclub-rpkgs/Companion/package-metadata.html) & [9 ("Licensing")](https://r4ds.github.io/bookclub-rpkgs/Companion/licensing.html)
 
 - Cohort 1 - [Tony ElHabr](https://twitter.com/TonyElHabr): [slides](https://r4ds.github.io/bookclub-rpkgs/Presentations/Week10/Cohort01/week10html#1) | [video](https://youtu.be/C_H1oQZD7m8)
+
+- **11: How do I include things like data and do obscure package-y things?** Chapters [14 ("External data")](https://r4ds.github.io/bookclub-rpkgs/Companion/external-data.html), [15 ("Compiled code")](https://r4ds.github.io/bookclub-rpkgs/Companion/compiled-code.html), [16 ("Installed files")](https://r4ds.github.io/bookclub-rpkgs/Companion/installed-files.html), and [17 ("Other components")](https://r4ds.github.io/bookclub-rpkgs/Companion/other-components.html)
+
+- Cohort 1 - [Jon Harmon](https://twitter.com/JonTheGeek): [slides](https://r4ds.github.io/bookclub-rpkgs/Presentations/Week11/Cohort01/presentation#1) | [video](https://youtu.be/h7BhdVYkM9o)
+
+- **12: How do I share and promote my package?** Chapter [20 ("Releasing a package")](https://r4ds.github.io/bookclub-rpkgs/Companion/releasing-a0package.html) & Marketing/pkgdown
+
+- Cohort 1 - [Asmae Toumi](https://twitter.com/asmae_toumi): SLIDES | [video](https://youtu.be/isKbovi62k4)
