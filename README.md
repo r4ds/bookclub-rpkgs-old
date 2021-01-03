@@ -2,7 +2,7 @@
 
 A weekly reading group of [R Packages by Hadley Wickham and Jennifer Bryan](https://r-pkgs.org/index.html) (2nd ed, WIP). Over the course of this book club, each member is going to start their own package!
 
-Visit the [#bookclub-r_packages channel](http://r4ds.io/join) on Slack to join the video chat! 
+Visit the [#book_club-r_packages channel](http://r4ds.io/join) on Slack to join the video chat! 
 
 This repo contains 2 main folders:
 
@@ -20,9 +20,7 @@ Other useful links:
 
 Don't forget to check out the [Learning Objectives for each week](https://r4ds.github.io/bookclub-rpkgs/Companion/introduction.html)!
 
-*Cohort 1 - Tuesdays 8pm ET, starting 2020-09-29 - facilitated by Jon Harmon*
-
-- **13: What did I learn in the R Packages Book Club?** - Everyone (2020-12-22)
+There are no active cohorts for this book.
 
 ### Presentations & Recordings
 
