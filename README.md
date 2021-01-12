@@ -64,10 +64,10 @@ There are no active cohorts for this book.
 
 - Cohort 1 - [Tony ElHabr](https://twitter.com/TonyElHabr): [slides](https://r4ds.github.io/bookclub-rpkgs/Presentations/Week10/Cohort01/week10html#1) | [video](https://youtu.be/C_H1oQZD7m8)
 
-- **11: How do I include things like data and do obscure package-y things?** Chapters [14 ("External data")](https://r4ds.github.io/bookclub-rpkgs/Companion/external-data.html), [15 ("Compiled code")](https://r4ds.github.io/bookclub-rpkgs/Companion/compiled-code.html), [16 ("Installed files")](https://r4ds.github.io/bookclub-rpkgs/Companion/installed-files.html), and [17 ("Other components")](https://r4ds.github.io/bookclub-rpkgs/Companion/other-components.html)
+**11: How do I include things like data and do obscure package-y things?** Chapters [14 ("External data")](https://r4ds.github.io/bookclub-rpkgs/Companion/external-data.html), [15 ("Compiled code")](https://r4ds.github.io/bookclub-rpkgs/Companion/compiled-code.html), [16 ("Installed files")](https://r4ds.github.io/bookclub-rpkgs/Companion/installed-files.html), and [17 ("Other components")](https://r4ds.github.io/bookclub-rpkgs/Companion/other-components.html)
 
 - Cohort 1 - [Jon Harmon](https://twitter.com/JonTheGeek): [slides](https://r4ds.github.io/bookclub-rpkgs/Presentations/Week11/Cohort01/presentation#1) | [video](https://youtu.be/h7BhdVYkM9o)
 
-- **12: How do I share and promote my package?** Chapter [20 ("Releasing a package")](https://r4ds.github.io/bookclub-rpkgs/Companion/releasing-a0package.html) & Marketing/pkgdown
+**12: How do I share and promote my package?** Chapter [20 ("Releasing a package")](https://r4ds.github.io/bookclub-rpkgs/Companion/releasing-a0package.html) & Marketing/pkgdown
 
 - Cohort 1 - [Asmae Toumi](https://twitter.com/asmae_toumi): SLIDES | [video](https://youtu.be/isKbovi62k4)
