@@ -1,0 +1,222 @@
+---
+title: "R Packages"
+subtitle: "RPkgs - How Should I Work On My Package?"
+author: "Kevin Gilds"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css: xaringan-themer.css
+    includes:
+      after_body: insert-logo.html
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,
+                      warning = FALSE,
+                      message = FALSE,
+                      comment = "#>")
+
+library(xaringanthemer)
+
+```
+
+
+```{r xaringan-themer, include = FALSE}
+style_mono_light(
+  base_color = "#3092FF",
+  header_font_google = google_font("Josefin Sans"),
+  text_font_google   = google_font("Montserrat", "300", "300i"),
+  code_font_google   = google_font("Droid Mono"),
+)
+```
+
+
+
+## Outline
+
+ch 5 and ch 18, cover powerful work tools in 
+
+- RStudio Projects & Devtools
+- Git & GitHub
+
+
+---
+
+## Chapter 5
+
+- Naming Conventions & Practices `available::available()`
+- Package Creation with `usethis:: create_package()`
+    
+    
+    - R directory
+
+    - DESCRIPTION file
+    
+    - NAMESPACE file
+
+- Rstudio projects
+  - Each project is isolated, with a file browser and working directory pre set
+  - Keyboard shortcuts
+- working directory and file path discipline
+
+  - Don't fiddle with `setwd()` in the scripts in your package
+  
+  - write paths that convey intent explicitly
+  
+    - Path helpers: `testthat::test_path()`
+    `fs::path_package()`
+---
+
+## Chapter 5 continued
+
+  - `devtools::load_all()` simulates the package environment-you can check if your code works
+    - quickly iterate
+    - call functions from other packages that you have imported
+      - Keyboard shortcut: Cmd+Shift+L (macOS), Ctrl+Shift+L (Windows, Linux)
+      - Build pane more menu
+
+
+---
+
+_Practical advice_
+
+- pick a name easy to Google
+
+- pick a name that is easy to pronounce
+
+
+
+```{r eval = FALSE}
+library(available)
+
+available::available("Rduck")
+
+
+```
+
+---
+
+# Bare Bones R package
+
+
+```{r eval=FALSE}
+usethis::create_package("Rduck")
+```
+
+
+- R directory
+
+- DESCRIPTION file
+
+- NAMESPACE file
+
+
+---
+
+
+# Fundamental development workflows
+
+
+**Learning objectives:**
+
+* Recall the rules for R package names.
+* Use `available::available()` to check whether a package name works.
+* Use `usethis::create_package()` to create a package and the associated RStudio Project.
+* List key benefits of working with RStudio Projects.
+* Recognize that exercising path discipline helps you avoid errors as your package changes states.
+* List the benefits of `devtools::load_all()`.
+* Remember how to quickly call `devtools::load_all()` in RStudio.
+
+
+---
+
+# Git and GitHub
+
+**Learning objectives:**
+
+* Understand that Git is a version control system.
+* Understand the difference between a local repository and a remote repository.
+* Understand how to commit your work in Git.
+* Understand how and when to push changes from one repository to another.
+* Understand how and when to pull changes from one repository to another.
+* Understand how to request that someone else pull your changes into their repository.
+* Know some places to look for more information.
+
+---
+
+---
+## Git
+
+- Experience is key to using and valuing git
+    - Git has saved me countless hours
+    - Revert has saved me as well. 
+    
+
+- Git tracks your changes 
+    - Helpful in debugging and gives you a history of the project
+    
+
+- Git branches
+  - Lets you play and see if 'something will work' without losing what does work. 
+    
+
+---
+  - The five components of a commit
+    1. SHA unique identifier
+    2. changeset--the files that were modified
+    3. commit message--human readable
+    4. parent-the prior commit
+      - none for initial commits
+      - merged have two parents
+    5. the author
+
+- Two stages of a commit
+  - identify what files will be associated with the commit
+  - commit the the staged files
+
+
+---
+# Best Practices for Git commits
+
+The art of the commit.  
+
+- Each commit should be minimal but complete
+    - minimal: focus on a single problem
+    - complete if you fix a bug include a unit test with the commit! 
+
+
+- Commit messages
+  - be concise but meaningful
+  - focus on the why!  
+      - 6 months from now you will see what you did but you may not know why you made that change. 
+
+---
+## Resources
+
+Git Resources: 
+
+- Jenny Bryan's [Happy Git With R](https://www.happygitwithr.com) (comprehensive use of Git with R)
+  - Spend time here to get set up with github (Keys & tokens) This makes using usethis::use_github() so easy!
+  
+- [OhShitGit Zine](https://jvns.ca/blog/2018/10/27/new-zine--oh-shit--git-/) - Julia Evans / Katie Sylor-Miller -> I find Julia Evans' zines so incredibly useful - also check out her zines on SQL and (soon) CSS 
+
+- [OhShitGit.com](https://ohshitgit.com) by Katie Sylor-Miller (alternatively, DangitGit.com for non-swearing)
+
+- Git Explorer [https://gitexplorer.com/](https://gitexplorer.com/)
+
+- Pro Git Book [Git Book](https://git-scm.com/book/en/v2) by Scott Chacon and Ben Straub
+
+
+- Git Remotes [Git Remotes](https://youtu.be/Gg4bLk8cGNo) This is a nice video tutorial on Forking and Pull Requests by David Mahler
+
+
+---
+
+
+
+
+
+
+
+
