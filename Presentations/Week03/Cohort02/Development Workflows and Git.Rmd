@@ -87,10 +87,10 @@ _Practical advice_
 
 
 
-```{r eval = FALSE}
+```{r eval = TRUE}
 library(available)
 
-available::available("Rduck")
+available::available("duck")
 
 
 ```
