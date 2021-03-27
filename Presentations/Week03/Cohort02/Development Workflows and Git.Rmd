@@ -115,14 +115,17 @@ usethis::create_package("Rduck")
 
 ---
 
-## Git
+## Chapter 18--Git and Github
 
-- Experience is key to using and valuing git
+- Experience is key to using git
+    - Invest in the configuration with Git & Github
     - Git has saved me countless hours
-    - Revert has saved me as well. 
+    - Helps make me work with more intent
     
 
 - Git tracks your changes 
+
+    - Is a version control system
     - Helpful in debugging and gives you a history of the project
     
 
@@ -182,7 +185,7 @@ Git Resources:
 
 ---
 
-
+### Lets Play 
 
 
 
