@@ -112,40 +112,9 @@ usethis::create_package("Rduck")
 - NAMESPACE file
 
 
----
-
-
-# Fundamental development workflows
-
-
-**Learning objectives:**
-
-* Recall the rules for R package names.
-* Use `available::available()` to check whether a package name works.
-* Use `usethis::create_package()` to create a package and the associated RStudio Project.
-* List key benefits of working with RStudio Projects.
-* Recognize that exercising path discipline helps you avoid errors as your package changes states.
-* List the benefits of `devtools::load_all()`.
-* Remember how to quickly call `devtools::load_all()` in RStudio.
-
 
 ---
 
-# Git and GitHub
-
-**Learning objectives:**
-
-* Understand that Git is a version control system.
-* Understand the difference between a local repository and a remote repository.
-* Understand how to commit your work in Git.
-* Understand how and when to push changes from one repository to another.
-* Understand how and when to pull changes from one repository to another.
-* Understand how to request that someone else pull your changes into their repository.
-* Know some places to look for more information.
-
----
-
----
 ## Git
 
 - Experience is key to using and valuing git
