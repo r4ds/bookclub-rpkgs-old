@@ -145,7 +145,7 @@ usethis::create_package("Rduck")
 
 - Two stages of a commit
   - identify what files will be associated with the commit
-  - commit the the staged files
+  - commit the staged files
 
 
 ---
